@@ -14,7 +14,7 @@ If there's an error during the file upload, it logs the error using the _logger 
 If the file is uploaded successfully, it returns an Ok response.
  */
 
-namespace Hahn_Softwareentwicklung;
+namespace Hahn_Softwareentwicklung.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
