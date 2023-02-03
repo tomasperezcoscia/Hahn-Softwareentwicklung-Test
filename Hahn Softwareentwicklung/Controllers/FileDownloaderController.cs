@@ -7,20 +7,41 @@ namespace Hahn_Softwareentwicklung.Controllers
     [ApiController]
     public class FileDownloaderController : ControllerBase
     {
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        [HttpGet("download/{fileName}")]
+        public FileDownloaderController(IWebHostEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
+
+        [HttpGet]
         public IActionResult DownloadFile(string fileName)
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Files", fileName);
+            if (string.IsNullOrEmpty(fileName))
+            {
+                return BadRequest("File name is empty or not provided");
+            }
+
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "files", fileName);
 
             if (!System.IO.File.Exists(filePath))
             {
-                return NotFound();
+                return NotFound("File not found");
             }
 
-            var fileBytes = System.IO.File.ReadAllBytes(filePath);
-            return File(fileBytes, "application/octet-stream", fileName);
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(filePath, FileMode.Open))
+            {
+                stream.CopyTo(memory);
+            }
+            memory.Position = 0;
+
+            return File(memory, GetContentType(fileName), fileName);
         }
 
+        private string GetContentType(string fileName)
+        {
+            return "application/octet-stream";
+        }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UwVyXxYmfFpWV+Pv+AX6KxjdCcrY2NtvV6szafwPeE+8WI5o8ozNwzNMW23hV70hUeq2ypc8BAP5usBS2jzAFw==",
+  "dgSpecHash": "1BZgjKF51M64hQQutRJfoFiRmRQprU3OY1Eh9DVQU/zJ10iGh27D+gFS3oLl6ZHd3OnsGDUWp3fIG2UsoX0R/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\plastik\\Documents\\Test task\\APi\\Hahn Softwareentwicklung\\Hahn Softwareentwicklung\\Hahn Softwareentwicklung.csproj",
+  "projectFilePath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Hahn Softwareentwicklung\\Hahn Softwareentwicklung.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\plastik\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\plastik\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
