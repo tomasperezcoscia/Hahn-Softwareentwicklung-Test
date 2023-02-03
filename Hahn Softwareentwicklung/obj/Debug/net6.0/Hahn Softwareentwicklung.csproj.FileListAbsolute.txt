@@ -1,0 +1,32 @@
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\appsettings.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Hahn Softwareentwicklung.exe
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Hahn Softwareentwicklung.deps.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Hahn Softwareentwicklung.runtimeconfig.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Hahn Softwareentwicklung.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Hahn Softwareentwicklung.pdb
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.csproj.AssemblyReference.cache
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.AssemblyInfoInputs.cache
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.AssemblyInfo.cs
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.csproj.CoreCompileInputs.cache
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets\msbuild.Hahn Softwareentwicklung.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets\msbuild.build.Hahn Softwareentwicklung.props
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Hahn Softwareentwicklung.props
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Hahn Softwareentwicklung.props
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\scopedcss\bundle\Hahn Softwareentwicklung.styles.css
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.csproj.CopyComplete
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\refint\Hahn Softwareentwicklung.dll
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.pdb
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\Hahn Softwareentwicklung.genruntimeconfig.cache
+C:\Users\plastik\Documents\Test task\APi\Hahn Softwareentwicklung\Hahn Softwareentwicklung\obj\Debug\net6.0\ref\Hahn Softwareentwicklung.dll
