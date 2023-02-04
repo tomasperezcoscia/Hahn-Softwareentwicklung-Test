@@ -1,7 +1,5 @@
 using Hahn_Softwareentwicklung.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.Configuration;
 
 
 var builder = WebApplication.CreateBuilder(args);

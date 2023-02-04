@@ -9,10 +9,7 @@ The content type of the file is set to "application/octet-stream".
 
 
 using Hahn_Softwareentwicklung.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using System.Net;
 
 namespace Hahn_Softwareentwicklung.Controllers
