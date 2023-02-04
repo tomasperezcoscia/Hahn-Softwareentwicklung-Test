@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Hahn_Softwareentwicklung.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 /*
 This code is the implementation of the "FileUploaderController" in a ASP.NET Core Web API. 
@@ -21,13 +23,13 @@ namespace Hahn_Softwareentwicklung.Controllers;
 
 public class FileUploaderController : ControllerBase
 {
-    private readonly IWebHostEnvironment _hostingEnvironment;
     private readonly ILogger<FileUploaderController> _logger;
+    private readonly FileContext _fileContext;
 
-    public FileUploaderController(IWebHostEnvironment hostingEnvironment, ILogger<FileUploaderController> logger)
+    public FileUploaderController(ILogger<FileUploaderController> logger, FileContext fileContext)
     {
-        _hostingEnvironment = hostingEnvironment;
         _logger = logger;
+        _fileContext = fileContext;
     }
 
     [HttpPost]
@@ -40,7 +42,23 @@ public class FileUploaderController : ControllerBase
         }
 
         string fileName = Path.GetFileName(file.FileName);
-        string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "files", fileName);
+        string folderPath = Path.Combine(AppContext.BaseDirectory, "files");
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+        }
+        string filePath = Path.Combine(folderPath, fileName);
+
+        // Agrego informacion de descarga y carga de datos
+        _fileContext.Files.Add(new FileTrafic
+        {
+            FileName = fileName,
+            UploadTime = DateTime.Now,
+            UploadedBy = "Username",
+            isUpload = true,
+        });
+        await _fileContext.SaveChangesAsync();
+
 
         try
         {
@@ -49,6 +67,9 @@ public class FileUploaderController : ControllerBase
                 await file.CopyToAsync(stream);
             }
             _logger.LogInformation($"File {fileName} uploaded successfully.");
+            var allFiles = _fileContext.Files.ToList();
+            _logger.LogInformation($"Table objects are: {JsonConvert.SerializeObject(allFiles)}");
+
         }
         catch (Exception ex)
         {

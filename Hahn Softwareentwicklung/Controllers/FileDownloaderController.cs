@@ -8,8 +8,10 @@ The content type of the file is set to "application/octet-stream".
  */
 
 
+using Hahn_Softwareentwicklung.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Hahn_Softwareentwicklung.Controllers
@@ -20,11 +22,13 @@ namespace Hahn_Softwareentwicklung.Controllers
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly ILogger<FileDownloaderController> _logger;
+        private readonly FileContext _context;
 
-        public FileDownloaderController(IWebHostEnvironment hostingEnvironment, ILogger<FileDownloaderController> logger)
+        public FileDownloaderController(IWebHostEnvironment hostingEnvironment, ILogger<FileDownloaderController> logger, FileContext context)
         {
             _hostingEnvironment = hostingEnvironment;
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
@@ -42,6 +46,18 @@ namespace Hahn_Softwareentwicklung.Controllers
             {
                 _logger.LogError($"File {fileName} not found");
                 return NotFound("File not found");
+            }
+            else
+            {
+                // Agrego informacion de descarga y carga de datos
+                _context.Files.Add(new FileTrafic
+                {
+                    FileName = fileName,
+                    UploadTime = DateTime.Now,
+                    UploadedBy = "Username",
+                    isUpload = true,
+                });
+                _context.SaveChangesAsync();
             }
 
             var memory = new MemoryStream();

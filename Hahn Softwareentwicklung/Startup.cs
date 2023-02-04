@@ -1,14 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Hahn_Softwareentwicklung
+namespace Hahn_Softwareentwicklung.Entities
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -18,6 +22,10 @@ namespace Hahn_Softwareentwicklung
             {
                 endpoints.MapControllers();
             });
+
+            
         }
+
+        public IConfiguration Configuration { get; }
     }
 }
