@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Net;
 
 namespace Hahn_Softwareentwicklung.Controllers
 {
@@ -20,13 +21,12 @@ namespace Hahn_Softwareentwicklung.Controllers
     [ApiController]
     public class FileDownloaderController : ControllerBase
     {
-        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly ILogger<FileDownloaderController> _logger;
         private readonly FileContext _context;
 
-        public FileDownloaderController(IWebHostEnvironment hostingEnvironment, ILogger<FileDownloaderController> logger, FileContext context)
+        public FileDownloaderController(ILogger<FileDownloaderController> logger, FileContext context)
         {
-            _hostingEnvironment = hostingEnvironment;
+            ;
             _logger = logger;
             _context = context;
         }
@@ -40,7 +40,7 @@ namespace Hahn_Softwareentwicklung.Controllers
                 return BadRequest("File name is empty or not provided");
             }
 
-            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "files", fileName);
+            string filePath = Path.Combine(AppContext.BaseDirectory, "files", fileName);
 
             if (!System.IO.File.Exists(filePath))
             {
@@ -50,14 +50,23 @@ namespace Hahn_Softwareentwicklung.Controllers
             else
             {
                 // Agrego informacion de descarga y carga de datos
+                var publicIpAddress = "";
+                try
+                {
+                    publicIpAddress = new WebClient().DownloadString("http://icanhazip.com");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error retrieving public IP address.");
+                }
                 _context.Files.Add(new FileTrafic
                 {
                     FileName = fileName,
                     UploadTime = DateTime.Now,
-                    UploadedBy = "Username",
+                    UploadedBy = publicIpAddress.Trim(),
                     isUpload = true,
                 });
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
 
             var memory = new MemoryStream();

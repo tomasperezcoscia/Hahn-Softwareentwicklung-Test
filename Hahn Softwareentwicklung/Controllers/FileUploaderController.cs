@@ -1,8 +1,4 @@
-﻿using Hahn_Softwareentwicklung.Entities;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-
-/*
+﻿/*
 This code is the implementation of the "FileUploaderController" in a ASP.NET Core Web API. 
 The class is marked with the [Route("api/[controller]")] and [ApiController] attributes to indicate that it is a controller in the API, and the endpoint for this controller will be "api/[controller]".
 The class constructor takes in two parameters: IWebHostEnvironment and ILogger<FileUploaderController>.
@@ -15,6 +11,13 @@ It then tries to copy the file to the specified path using a FileStream. If the 
 If there's an error during the file upload, it logs the error using the _logger instance and returns a StatusCode response with a status code of StatusCodes.Status500InternalServerError and a message "Error uploading file.".
 If the file is uploaded successfully, it returns an Ok response.
  */
+
+
+using Hahn_Softwareentwicklung.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net;
+
 
 namespace Hahn_Softwareentwicklung.Controllers;
 
@@ -50,11 +53,20 @@ public class FileUploaderController : ControllerBase
         string filePath = Path.Combine(folderPath, fileName);
 
         // Agrego informacion de descarga y carga de datos
+        var publicIpAddress = "";
+        try
+        {
+            publicIpAddress = new WebClient().DownloadString("http://icanhazip.com");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error retrieving public IP address.");
+        }
         _fileContext.Files.Add(new FileTrafic
         {
             FileName = fileName,
             UploadTime = DateTime.Now,
-            UploadedBy = "Username",
+            UploadedBy = publicIpAddress.Trim(),
             isUpload = true,
         });
         await _fileContext.SaveChangesAsync();
