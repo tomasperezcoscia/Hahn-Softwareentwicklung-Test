@@ -19,14 +19,14 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // GET: api/Workers
         [HttpGet]
-        public ActionResult<IEnumerable<Worker>> GetWorkers()
+        public ActionResult<IEnumerable<Worker>> GetWorkersList()
         {
             return _context.Workers.ToList();
         }
 
         // GET: api/Workers/5
         [HttpGet("{id}")]
-        public ActionResult<Worker> GetWorker(int id)
+        public ActionResult<Worker> GetWorkerById(int id)
         {
             var worker = _context.Workers.Find(id);
 
@@ -40,7 +40,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // POST: api/Workers
         [HttpPost]
-        public ActionResult<Worker> PostWorker(Worker worker)
+        public ActionResult<Worker> AddWorker(Worker worker)
         {
             _context.Workers.Add(worker);
             _context.SaveChanges();
@@ -50,7 +50,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // PUT: api/Workers/5
         [HttpPut("{id}")]
-        public ActionResult<Worker> PutWorker(int id, Worker worker)
+        public ActionResult<Worker> EditWorkerById(int id, Worker worker)
         {
             if (id != worker.WorkerId)
             {
@@ -65,7 +65,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // DELETE: api/Workers/5
         [HttpDelete("{id}")]
-        public ActionResult<Worker> DeleteWorker(int id)
+        public ActionResult<Worker> DeleteWorkerById(int id)
         {
             var worker = _context.Workers.Find(id);
             if (worker == null)
