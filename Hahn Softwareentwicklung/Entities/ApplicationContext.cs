@@ -2,6 +2,8 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
+/*I will use only one DbContext since the app is kind of small at the moment, in case of it being bigger, i should divide it in one Context per Module
+ * , (Customer Managemment, Sales, Shipping, Financing, etc) */
 
 namespace Hahn_Softwareentwicklung.Entities
 {
