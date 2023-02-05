@@ -19,5 +19,6 @@
             Position = position;
             Salary = salary;
         }
+
     }
 }
