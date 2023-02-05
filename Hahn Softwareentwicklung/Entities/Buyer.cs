@@ -10,5 +10,16 @@
         public DateTime  DateOfBirth { get; set; }
         public float Budget { get; set; }
         public List<string> Interests { get;set; }
+
+        public Buyer(string firstName, string lastName, string email, string phoneNumber, DateTime dateOfBirth, float budget, List<string> interests)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            DateOfBirth = dateOfBirth;
+            Budget = budget;
+            Interests = interests;
+        }
     }
 }

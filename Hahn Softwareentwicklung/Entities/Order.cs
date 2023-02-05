@@ -20,14 +20,16 @@
             Cancelled
         }
 
-        public Order(Buyer customer, List<OrderItem> orderItems, Payment payment)
+        public Order(Buyer buyer, List<OrderItem> orderItems, Payment payment, ShippingAddress shippingAddress)
         {
             OrderId = Guid.NewGuid();
-            Buyer = customer;
+            Buyer = buyer;
             OrderItems = orderItems;
+            OrderDate = DateTime.Now;
             Payment = payment;
             TotalAmount = orderItems.Sum(x => x.UnitPrice * x.Quantity);
             Status = OrderStatus.Pending;
+            ShippingAddress = shippingAddress;
         }
 
         public void UpdateStatus(OrderStatus newStatus)
