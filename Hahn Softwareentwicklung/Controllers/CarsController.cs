@@ -8,11 +8,11 @@ namespace Hahn_Softwareentwicklung.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarController : ControllerBase
+    public class CarsController : ControllerBase
     {
         private readonly ApplicationContext _context;
 
-        public CarController(ApplicationContext context)
+        public CarsController(ApplicationContext context)
         {
             _context = context;
         }

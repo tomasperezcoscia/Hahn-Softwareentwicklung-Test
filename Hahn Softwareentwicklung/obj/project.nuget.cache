@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kzq+OSujw8wA7AV476Z3aWMV30fyusgokaeX5kB/ni3hWPt2OxtlOqy3VL1pzGFgUxiMorcFbzVROZ0/z9cTSw==",
+  "dgSpecHash": "lZTyB7iw88QDvSyxHcCKS14AgOjb1oe349r0agFITbYe/CSOZxEWZWyqXEE3tC0B+YNgMR200HgI30qNY/qzMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Hahn Softwareentwicklung\\Hahn Softwareentwicklung.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\plastik\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\plastik\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\plastik\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\plastik\\.nuget\\packages\\microsoft.aspnet.webapi.client\\4.0.20710\\microsoft.aspnet.webapi.client.4.0.20710.nupkg.sha512",
     "C:\\Users\\plastik\\.nuget\\packages\\microsoft.aspnet.webapi.core\\4.0.20710\\microsoft.aspnet.webapi.core.4.0.20710.nupkg.sha512",
     "C:\\Users\\plastik\\.nuget\\packages\\microsoft.aspnet.webapi.webhost\\4.0.20710\\microsoft.aspnet.webapi.webhost.4.0.20710.nupkg.sha512",
