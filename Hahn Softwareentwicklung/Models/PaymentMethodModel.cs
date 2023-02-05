@@ -8,5 +8,15 @@
         {
             Name = name;
         }
+
+        public enum PaymentMethods
+        {
+            None,
+            CreditCard,
+            DebitCard,
+            NetBanking,
+            UPI,
+            Wallet
+        }
     }
 }

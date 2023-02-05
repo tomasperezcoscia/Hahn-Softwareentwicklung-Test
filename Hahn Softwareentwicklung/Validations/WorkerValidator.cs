@@ -1,6 +1,8 @@
 ﻿using Hahn_Softwareentwicklung.Entities;
 using FluentValidation;
 
+namespace Hahn_Softwareentwicklung.Validations;
+
 public class WorkerValidator : AbstractValidator<Worker>
 {
     public WorkerValidator()
