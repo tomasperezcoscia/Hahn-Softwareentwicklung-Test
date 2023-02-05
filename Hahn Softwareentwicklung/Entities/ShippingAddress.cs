@@ -9,15 +9,5 @@
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
-
-        public ShippingAddress(string addressLine1, string addressLine2, string city, string state, string postalCode, string country)
-        {
-            AddressLine1 = addressLine1;
-            AddressLine2 = addressLine2;
-            City = city;
-            State = state;
-            PostalCode = postalCode;
-            Country = country;
-        }
     }
 }

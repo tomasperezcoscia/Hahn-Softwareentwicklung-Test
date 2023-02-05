@@ -7,7 +7,7 @@
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
 
-        public OrderItem(Car car, int quantity) {
+        public OrderItem(Car car, int quantity, Guid fromOrder) {
             Car = car;
             Quantity = quantity;
             UnitPrice = car.Price;
