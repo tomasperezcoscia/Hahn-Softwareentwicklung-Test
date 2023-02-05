@@ -1,11 +1,11 @@
-﻿namespace Hahn_Softwareentwicklung.Entities
+﻿namespace Hahn_Softwareentwicklung.Models
 {
     public class PaymentModel
     {
         public int PaymentId { get; set; }
         public decimal Amount { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
-        public PaymentModel(decimal amount, PaymentMethod paymentMethod) {
+        public PaymentMethodModel PaymentMethod { get; set; }
+        public PaymentModel(decimal amount, PaymentMethodModel paymentMethod) {
             Amount = amount;
             PaymentMethod = paymentMethod;
         }
