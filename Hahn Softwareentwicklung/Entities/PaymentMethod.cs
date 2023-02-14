@@ -1,4 +1,6 @@
-﻿namespace Hahn_Softwareentwicklung.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hahn_Softwareentwicklung.Entities
 {
     public class PaymentMethod
     {

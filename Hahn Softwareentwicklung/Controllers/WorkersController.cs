@@ -26,7 +26,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // GET: api/Workers/5
         [HttpGet("{id}")]
-        public ActionResult<Worker> GetWorkerById(int id)
+        public ActionResult<Worker> GetWorkerById(Guid id)
         {
             var worker = _context.Workers.Find(id);
 
@@ -42,15 +42,16 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPost]
         public ActionResult<Worker> AddWorker(Worker worker)
         {
+            worker.WorkerId = Guid.NewGuid();
             _context.Workers.Add(worker);
             _context.SaveChanges();
 
-            return CreatedAtAction("GetWorker", new { id = worker.WorkerId }, worker);
+            return worker;
         }
 
         // PUT: api/Workers/5
         [HttpPut("{id}")]
-        public ActionResult<Worker> EditWorkerById(int id, Worker worker)
+        public ActionResult<Worker> EditWorkerById(Guid id, Worker worker)
         {
             if (id != worker.WorkerId)
             {
@@ -65,7 +66,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // DELETE: api/Workers/5
         [HttpDelete("{id}")]
-        public ActionResult<Worker> DeleteWorkerById(int id)
+        public ActionResult<Worker> DeleteWorkerById(Guid id)
         {
             var worker = _context.Workers.Find(id);
             if (worker == null)

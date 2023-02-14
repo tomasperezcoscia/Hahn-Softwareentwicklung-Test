@@ -1,13 +1,23 @@
-﻿namespace Hahn_Softwareentwicklung.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hahn_Softwareentwicklung.Entities
 {
     public class Payment
     {
-        public int PaymentId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid PaymentId { get; set; }
         public decimal Amount { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
-        public Payment(decimal amount, PaymentMethod paymentMethod) {
+        public int PaymentMethodId { get; set; }
+
+        [ForeignKey("Order")]
+        public Guid OrderId { get; set; }
+        public virtual Order Order { get; set; }
+        public Payment(decimal amount, int paymentMethodId, Guid orderId)
+        {
+            PaymentId = Guid.NewGuid();
             Amount = amount;
-            PaymentMethod = paymentMethod;
+            PaymentMethodId = paymentMethodId;
+            OrderId = orderId;
         }
     }
 }
