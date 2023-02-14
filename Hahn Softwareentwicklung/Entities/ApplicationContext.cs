@@ -34,41 +34,32 @@ namespace Hahn_Softwareentwicklung.Entities
             modelBuilder.Entity<Order>().ToTable("Orders");
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.HasKey(t => t.OrderId);
+                entity.HasKey(t => t.Id);
             });
-            modelBuilder.Entity<Order>()
-                .HasMany(o => o.OrderItems)
-                .WithOne(oi => oi.Order)
-                .HasForeignKey(oi => oi.OrderId);
             modelBuilder.Entity<OrderItem>().ToTable("OrderItems");
             modelBuilder.Entity<OrderItem>(entity =>
             {
-                entity.HasKey(t => t.OrderItemId);
+                entity.HasKey(t => t.Id);
             });
             modelBuilder.Entity<Car>().ToTable("Cars");
             modelBuilder.Entity<Car>(entity =>
             {
-                entity.HasKey(t => t.CarID);
+                entity.HasKey(t => t.Id);
             });
             modelBuilder.Entity<Buyer>().ToTable("Buyers");
             modelBuilder.Entity<Buyer>(entity =>
             {
-                entity.HasKey(t => t.BuyerId);
+                entity.HasKey(t => t.Id);
             });
-            modelBuilder.Entity<Buyer>()
-                .HasMany(b => b.Orders)
-                .WithOne(o => o.Buyer)
-                .HasForeignKey(o => o.BuyerId);
-
             modelBuilder.Entity<Payment>().ToTable("Payments");
             modelBuilder.Entity<Payment>(entity =>
             {
-                entity.HasKey(t => t.PaymentId);
+                entity.HasKey(t => t.Id);
             });
             modelBuilder.Entity<Worker>().ToTable("Workers");
             modelBuilder.Entity<Worker>(entity =>
             {
-                entity.HasKey(t => t.WorkerId);
+                entity.HasKey(t => t.Id);
             });
             
             

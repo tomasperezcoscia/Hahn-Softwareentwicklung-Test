@@ -5,7 +5,7 @@ namespace Hahn_Softwareentwicklung.Entities
     public class Car
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid CarID { get; set; }
+        public Guid Id { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
@@ -14,7 +14,7 @@ namespace Hahn_Softwareentwicklung.Entities
 
         public Car(string brand, string model, int year, decimal price, string color)
         {
-            CarID = Guid.NewGuid();
+            Id = Guid.NewGuid();
             Brand = brand;
             Model = model;
             Year = year;

@@ -2,39 +2,41 @@
 {
     public class OrderModel
     {
-        public Guid OrderId { get; set; }
+        public Guid Id { get; set; }
         public BuyerModel Buyer { get; set; }
         public DateTime OrderDate { get; set; }
         public IList<OrderItemModel> OrderItems { get; set; }
         public decimal TotalAmount { get; set; }
-        public PaymentModel Payment { get; set; }
-        public OrderStatusModel Status { get; set; }
+        public IList<PaymentModel> Payments { get; set; }
+        public OrderStatus Status { get; set; }
         public ShippingAddressModel ShippingAddress { get; set; }
 
-        public OrderModel(BuyerModel buyer, List<OrderItemModel> orderItems, PaymentModel payment, ShippingAddressModel shippingAddress)
+        public OrderModel(Guid id, BuyerModel buyer, DateTime orderDate, List<OrderItemModel> orderItems, IList<PaymentModel> payments, OrderStatus status, ShippingAddressModel shippingAddress)
         {
-            OrderId = Guid.NewGuid();
+            Id = id;
             Buyer = buyer;
             OrderItems = orderItems;
-            OrderDate = DateTime.Now;
-            Payment = payment;
-            TotalAmount = orderItems.Sum(x => x.UnitPrice * x.Quantity);
-            Status = OrderStatusModel.Pending;
+            OrderDate = orderDate;
+            Payments = payments;
+            TotalAmount = orderItems.Sum(x => x.Car.Price * x.Quantity);
+            Status = status;
             ShippingAddress = shippingAddress;
         }
 
-        public void UpdateStatus(OrderStatusModel newStatus)
+        public void UpdateStatus(OrderStatus newStatus)
         {
             Status = newStatus;
         }
+
+        public enum OrderStatus
+        {
+            Pending,
+            Processing,
+            Shipped,
+            Delivered,
+            Cancelled
+        }
     }
 
-    public enum OrderStatusModel
-    {
-        Pending,
-        Processing,
-        Shipped,
-        Delivered,
-        Cancelled
-    }
+    
 }

@@ -42,7 +42,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPost]
         public ActionResult<Car> AddCar(Car car)
         {
-            car.CarID = Guid.NewGuid();
+            car.Id = Guid.NewGuid();
             _context.Cars.Add(car);
             _context.SaveChanges();
 
@@ -53,7 +53,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPut("{id}")]
         public ActionResult<Car> EditCarById(Guid id, Car car)
         {
-            if (id != car.CarID)
+            if (id != car.Id)
             {
                 return BadRequest();
             }

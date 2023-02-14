@@ -5,7 +5,7 @@ namespace Hahn_Softwareentwicklung.Entities
     public class Worker
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid WorkerId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
@@ -15,7 +15,7 @@ namespace Hahn_Softwareentwicklung.Entities
 
         public Worker(string name, string email, string phoneNumber, string position, decimal salary)
         {
-            WorkerId = Guid.NewGuid();
+            Id = Guid.NewGuid();
             Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
