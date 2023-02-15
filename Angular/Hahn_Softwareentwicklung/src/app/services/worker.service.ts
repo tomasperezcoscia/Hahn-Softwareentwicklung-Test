@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WorkerModel } from '../models/workerModel';
+import { WorkerModel } from '../models/worker.model';
+import { Environment } from 'src/environments/environment';
+import { ResponseApi } from '../interfaces/response-api';
+import { Login } from '../interfaces/login';
+import { Workers } from '../interfaces/worker';
 
 @Injectable({
   providedIn: 'root'
