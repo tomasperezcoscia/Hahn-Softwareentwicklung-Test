@@ -79,5 +79,13 @@ namespace Hahn_Softwareentwicklung.Controllers
 
             return buyer;
         }
+
+        // GET: api/Buyers/5/Orders
+        [HttpGet("{id}/Orders")]
+        public ActionResult<IEnumerable<Order>> getOrdersForBuyer(Guid id)
+        {
+            var orders = _context.Orders.Where(o => o.BuyerId == id).ToList();
+            return orders;
+        }
     }
 }
