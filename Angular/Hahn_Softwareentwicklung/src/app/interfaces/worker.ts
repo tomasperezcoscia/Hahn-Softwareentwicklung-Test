@@ -1,4 +1,4 @@
-export interface Workers {
+export interface Worker {
     id: string,
     name: string,
     email: string,

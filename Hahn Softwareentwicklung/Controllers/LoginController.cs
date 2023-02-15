@@ -7,6 +7,8 @@ using Hahn_Softwareentwicklung.Models;
 
 namespace Hahn_Softwareentwicklung.Controllers
 {
+    [Route("api/Workers")]
+    [ApiController]
     public class LoginController : Controller
     {
         private readonly UserManager<Worker> _userManager;
@@ -18,13 +20,13 @@ namespace Hahn_Softwareentwicklung.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpGet]
+        [HttpGet("login")]
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
@@ -50,7 +52,7 @@ namespace Hahn_Softwareentwicklung.Controllers
             return View(model);
         }
 
-        [HttpGet]
+        [HttpGet("logout")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

@@ -1,38 +1,45 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WorkerModel } from '../models/worker.model';
 import { Environment } from 'src/environments/environment';
 import { ResponseApi } from '../interfaces/response-api';
 import { Login } from '../interfaces/login';
-import { Workers } from '../interfaces/worker';
+import { Worker } from '../interfaces/worker';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkerService {
 
-  private apiUrl = 'http://localhost:7129/api/workers';
+  private apiUrl:string = Environment.endpoint + 'workers';
 
   constructor(private http: HttpClient) { }
 
-  getWorkers(): Observable<WorkerModel[]> {
-    return this.http.get<WorkerModel[]>(this.apiUrl);
+  login(login: Login): Observable<ResponseApi> {
+    return this.http.post<ResponseApi>(`${this.apiUrl}/login`, login);
   }
 
-  getWorker(id: string): Observable<WorkerModel> {
-    return this.http.get<WorkerModel>(`${this.apiUrl}/${id}`);
+  logout(): Observable<ResponseApi> {
+    return this.http.post<ResponseApi>(`${this.apiUrl}/logout`, {});
   }
 
-  addWorker(worker: WorkerModel): Observable<WorkerModel> {
-    return this.http.post<WorkerModel>(this.apiUrl, worker);
+  getWorkers(): Observable<Worker[]> {
+    return this.http.get<Worker[]>(this.apiUrl);
   }
 
-  updateWorker(id: string, worker: WorkerModel): Observable<any> {
+  getWorker(id: string): Observable<Worker> {
+    return this.http.get<Worker>(`${this.apiUrl}/${id}`);
+  }
+
+  addWorker(worker: Worker): Observable<Worker> {
+    return this.http.post<Worker>(this.apiUrl, worker);
+  }
+
+  updateWorker(id: string, worker: Worker): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, worker);
   }
 
-  deleteWorker(id: string): Observable<WorkerModel> {
-    return this.http.delete<WorkerModel>(`${this.apiUrl}/${id}`);
+  deleteWorker(id: string): Observable<Worker> {
+    return this.http.delete<Worker>(`${this.apiUrl}/${id}`);
   }
 }

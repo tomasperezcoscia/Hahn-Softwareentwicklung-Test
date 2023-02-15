@@ -1,4 +1,4 @@
-export interface Buyers {
+export interface Buyer {
     id: string;
     firstName: string;
     lastName: string;
