@@ -61,9 +61,120 @@ namespace Hahn_Softwareentwicklung.Entities
             {
                 entity.HasKey(t => t.Id);
             });
-            
-            
+            modelBuilder.Entity<Menu>().ToTable("Menues");
+            modelBuilder.Entity<Menu>(entity =>
+            {
+                entity.HasKey(t => t.Id);
+                entity.Property(t => t.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasAnnotation("Sqlite:Autoincrement", true);
+            });
+            modelBuilder.Entity<Role>().ToTable("Roles");
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.HasKey(t => t.Id);
+            });
+            modelBuilder.Entity<MenuRole>().ToTable("MenuRole");
+            modelBuilder.Entity<MenuRole>(entity =>
+            {
+                entity.HasKey(t => t.Id);
+            });
 
+            modelBuilder.Entity<Menu>()
+                .Property(m => m.Id)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Role>()
+                .Property(m => m.Id)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Menu>().HasData(
+                            new Menu
+                            {
+                                Id = 1,
+                                Name = "Dashboard",
+                                Icon = "dashboard",
+                                Url = "/pages/dashboard"
+                            },
+                            new Menu
+                            {
+                                Id = 2,
+                                Name = "HR",
+                                Icon = "assignment_ind",
+                                Url = "/pages/humanresources"
+                            },
+                            new Menu
+                            {
+                                Id = 3,
+                                Name = "Sales",
+                                Icon = "attach_money",
+                                Url = "/pages/sales"
+                            },
+                            new Menu
+                            {
+                                Id = 4,
+                                Name = "Buyers",
+                                Icon = "account_circle",
+                                Url = "/pages/buyers"
+                            },
+                            new Menu
+                            {
+                                Id = 5,
+                                Name = "Cars",
+                                Icon = "directions_car",
+                                Url = "/pages/cars"
+                            },
+                            new Menu
+                            {
+                                Id = 6,
+                                Name = "LogOut",
+                                Icon = "weekend",
+                                Url = "/pages/logout"
+                            },
+                            new Menu
+                            {
+                                Id = 7,
+                                Name = "LogIn",
+                                Icon = "create",
+                                Url = "/pages/login"
+                            });
+
+            modelBuilder.Entity<Role>().HasData(
+                            new Role { Id = 1, Name = "Administrator", Description = "Administrator" },
+                            new Role { Id = 2, Name = "HR", Description = "HumanResources employee" },
+                            new Role { Id = 3, Name = "Sales", Description = "Sales employee" }
+                            );
+
+            modelBuilder.Entity<Worker>().HasData(
+                            new Worker("Admin", "admin", "123", 1, 999999),
+                            new Worker("HR test", "hrtest", "123", 2, 0),
+                            new Worker("Sales test", "salestest", "123", 3, 0)
+                            );
+
+            modelBuilder.Entity<MenuRole>().HasData(
+                                new MenuRole { Id = 1, roleId = 1, menuId = 1 },
+                                new MenuRole { Id = 2, roleId = 1, menuId = 2 },
+                                new MenuRole { Id = 3, roleId = 1, menuId = 3 },
+                                new MenuRole { Id = 4, roleId = 1, menuId = 4 },
+                                new MenuRole { Id = 5, roleId = 1, menuId = 5 },
+                                new MenuRole { Id = 6, roleId = 1, menuId = 6 },
+                                new MenuRole { Id = 7, roleId = 1, menuId = 7 },
+                                new MenuRole { Id = 8, roleId = 2, menuId = 1 },
+                                new MenuRole { Id = 9, roleId = 2, menuId = 2 },
+                                new MenuRole { Id = 10, roleId = 2, menuId = 6 },
+                                new MenuRole { Id = 11, roleId = 2, menuId = 7 },
+                                new MenuRole { Id = 12, roleId = 3, menuId = 1 },
+                                new MenuRole { Id = 13, roleId = 3, menuId = 3 },
+                                new MenuRole { Id = 14, roleId = 3, menuId = 4 },
+                                new MenuRole { Id = 15, roleId = 3, menuId = 5 },
+                                new MenuRole { Id = 16, roleId = 3, menuId = 6 },
+                                new MenuRole { Id = 17, roleId = 3, menuId = 7 }
+                            );
+            modelBuilder.Entity<Car>().HasData(
+                new Car("Ford","Fiesta",2018,1500,"Red"),
+                new Car("Ford", "Focus", 2022, 3000, "Blue"),
+                new Car("Nissan", "GTR 34", 2002, 150000, "Blue")
+                );
 
             base.OnModelCreating(modelBuilder);
         }
@@ -76,6 +187,10 @@ namespace Hahn_Softwareentwicklung.Entities
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
         public DbSet<ShippingAddress> ShippingAddresses { get; set; }
+        public DbSet<Menu> Menues { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<MenuRole> MenuRoles { get; set; }
+
 
 
     }
