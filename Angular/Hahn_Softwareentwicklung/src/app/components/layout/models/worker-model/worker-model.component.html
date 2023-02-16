@@ -2,7 +2,7 @@
 
 <mat-dialog-content>
     <form [formGroup]="workerForm">
-        <mat-grid-list cols="1" rowHeight="80px">
+        <mat-grid-list cols="1" rowHeight="80px" style="width: 100%">
             <mat-grid-tile>
                 <mat-form-field appearence="outline">
                     <mat-label>Name</mat-label>
@@ -28,8 +28,8 @@
                 <mat-form-field appearence="outline">
                     <mat-label>Role</mat-label>
                     <mat-select formControlName="workerRoleId">
-                        <mat-option *ngFor="let role of roles" [value]="role.roleId">
-                            {{role.roleName}}
+                        <mat-option *ngFor="let role of roleList" [value]="role.id">
+                            {{role.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

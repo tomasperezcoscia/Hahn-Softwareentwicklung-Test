@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { SharedModule } from './Reutilizable/shared/shared.module';
-import { WorkerComponent } from './components/models/worker/worker.component';
-import { WorkerModelComponent } from './components/models/workerlayout/models/worker-model/worker-model.component';
 
 
 @NgModule({
@@ -16,8 +14,6 @@ import { WorkerModelComponent } from './components/models/workerlayout/models/wo
     AppComponent,
     LoginComponent,
     LayoutComponent,
-    WorkerComponent,
-    WorkerModelComponent
   ],
   imports: [
     BrowserModule,

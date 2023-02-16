@@ -16,21 +16,21 @@ namespace Hahn_Softwareentwicklung.Controllers
         }
 
         //GET: api/Menues
-        [HttpGet("Menues")]
+        [HttpGet]
         public ActionResult<IEnumerable<Menu>> GetListOfRegisteredMenues()
         {
             return _context.Menues.ToList();
         }
 
         //GET: api/Menues/Roles
-        [HttpGet("Menues/Roles")]
+        [HttpGet("Roles")]
         public ActionResult<IEnumerable<Role>> GetListOfRegisteredRoles()
         {
             return _context.Roles.ToList();
         }
 
         //GET: api/Menues/Roles/{id}
-        [HttpGet("Menues/Roles/{id}")]
+        [HttpGet("Roles/{id}")]
         public ActionResult<IEnumerable<Menu>> GetListOfMenuesForRole(int id)
         {
             var menus = from menuRole in _context.MenuRoles
