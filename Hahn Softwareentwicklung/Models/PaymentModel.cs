@@ -2,10 +2,11 @@
 {
     public class PaymentModel
     {
-        public int PaymentId { get; set; }
+        public Guid Id { get; set; }
         public decimal Amount { get; set; }
         public PaymentMethodModel PaymentMethod { get; set; }
-        public PaymentModel(decimal amount, PaymentMethodModel paymentMethod) {
+        public PaymentModel(Guid id, decimal amount, PaymentMethodModel paymentMethod) {
+            Id = id;
             Amount = amount;
             PaymentMethod = paymentMethod;
         }

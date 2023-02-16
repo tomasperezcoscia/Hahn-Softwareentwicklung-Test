@@ -17,7 +17,6 @@ namespace Hahn_Softwareentwicklung.Validators
                                         .LessThan(DateTime.Today).WithMessage("Date of birth must be in the past");
             RuleFor(x => x.Budget).NotEmpty().WithMessage("Budget is required")
                                   .GreaterThan(0).WithMessage("Budget must be greater than 0");
-            RuleFor(x => x.Interests).NotEmpty().WithMessage("Interests are required");
         }
     }
 }

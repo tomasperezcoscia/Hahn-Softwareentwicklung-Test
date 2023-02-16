@@ -2,10 +2,11 @@
 {
     public class PaymentMethodModel
     {
-        public int PaymentMethodId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public PaymentMethodModel(string name)
+        public PaymentMethodModel(int id,string name)
         {
+            Id = id;
             Name = name;
         }
 

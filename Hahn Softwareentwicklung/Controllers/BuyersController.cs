@@ -42,7 +42,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPost]
         public ActionResult<Buyer> AddBuyer(Buyer buyer)
         {
-            buyer.BuyerId = Guid.NewGuid();
+            buyer.Id = Guid.NewGuid();
             _context.Buyers.Add(buyer);
             _context.SaveChanges();
 
@@ -53,7 +53,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPut("{id}")]
         public ActionResult<Buyer> EditBuyerById(Guid id, Buyer buyer)
         {
-            if (id != buyer.BuyerId)
+            if (id != buyer.Id)
             {
                 return BadRequest();
             }
@@ -78,6 +78,14 @@ namespace Hahn_Softwareentwicklung.Controllers
             _context.SaveChanges();
 
             return buyer;
+        }
+
+        // GET: api/Buyers/5/Orders
+        [HttpGet("{id}/Orders")]
+        public ActionResult<IEnumerable<Order>> getOrdersForBuyer(Guid id)
+        {
+            var orders = _context.Orders.Where(o => o.BuyerId == id).ToList();
+            return orders;
         }
     }
 }

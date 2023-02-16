@@ -42,7 +42,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPost]
         public ActionResult<Worker> AddWorker(Worker worker)
         {
-            worker.WorkerId = Guid.NewGuid();
+            worker.Id = Guid.NewGuid();
             _context.Workers.Add(worker);
             _context.SaveChanges();
 
@@ -53,7 +53,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPut("{id}")]
         public ActionResult<Worker> EditWorkerById(Guid id, Worker worker)
         {
-            if (id != worker.WorkerId)
+            if (id != worker.Id)
             {
                 return BadRequest();
             }
@@ -79,5 +79,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
             return worker;
         }
+
+
     }
 }

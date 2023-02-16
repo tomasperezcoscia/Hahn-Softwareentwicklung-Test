@@ -2,16 +2,15 @@
 {
     public class OrderItemModel
     {
-        public int OrderItemId { get; set; }
+        public Guid Id { get; set; }
         public CarModel Car { get; set; }
         public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
 
-        public OrderItemModel(CarModel car, int quantity, Guid fromOrder)
+        public OrderItemModel(Guid id, CarModel car, int quantity, Guid fromOrder)
         {
+            Id = id;
             Car = car;
             Quantity = quantity;
-            UnitPrice = car.Price;
         }
     }
 }

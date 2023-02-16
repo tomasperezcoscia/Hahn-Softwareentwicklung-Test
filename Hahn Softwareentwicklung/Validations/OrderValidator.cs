@@ -7,12 +7,11 @@ namespace Hahn_Softwareentwicklung.Validators
     {
         public OrderValidator()
         {
-            RuleFor(x => x.OrderId).NotEmpty();
+            RuleFor(x => x.Id).NotEmpty();
             RuleFor(x => x.Buyer).SetValidator(new BuyerValidator());
             RuleFor(x => x.OrderDate).NotEmpty();
             RuleFor(x => x.OrderItems).NotEmpty();
             RuleFor(x => x.TotalAmount).NotEmpty();
-            RuleFor(x => x.Payment).SetValidator(new PaymentValidator());
             RuleFor(x => x.Status).IsInEnum();
             RuleFor(x => x.ShippingAddress).SetValidator(new ShippingAddressValidator());
         }
