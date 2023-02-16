@@ -15,8 +15,8 @@ export class WorkerService {
 
   constructor(private http: HttpClient) { }
 
-  login(login: Login): Observable<ResponseApi> {
-    return this.http.post<ResponseApi>(`${this.apiUrl}/login`, login);
+  login(login: Login): Observable<Login> {
+    return this.http.post<Login>(`${this.apiUrl}/login`, login);
   }
 
   logout(): Observable<ResponseApi> {
@@ -35,8 +35,8 @@ export class WorkerService {
     return this.http.post<Worker>(this.apiUrl, worker);
   }
 
-  updateWorker(id: string, worker: Worker): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, worker);
+  updateWorker(id: string, worker: Worker): Observable<Worker> {
+    return this.http.put<Worker>(`${this.apiUrl}/${id}`, worker);
   }
 
   deleteWorker(id: string): Observable<Worker> {
