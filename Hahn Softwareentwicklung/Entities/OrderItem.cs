@@ -1,16 +1,29 @@
-﻿namespace Hahn_Softwareentwicklung.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace Hahn_Softwareentwicklung.Entities
 {
     public class OrderItem
     {
-        public int OrderItemId { get; set; }
-        public Car Car { get; set; }
+        public Guid OrderItemId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
 
-        public OrderItem(Car car, int quantity, Guid fromOrder) {
-            Car = car;
+        [ForeignKey("Car")]
+        public Guid CarId { get; set; }
+        public virtual Car Car { get; set; }
+
+        [ForeignKey("Order")]
+        public Guid OrderId { get; set; }
+        public virtual Order Order { get; set; }
+
+        public OrderItem(Guid carId, int quantity, Guid orderId)
+        {
+            OrderItemId = Guid.NewGuid();
+            CarId = carId;
             Quantity = quantity;
-            UnitPrice = car.Price;
+            OrderId = orderId;
         }
     }
 }
+

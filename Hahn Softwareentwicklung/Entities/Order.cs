@@ -1,15 +1,30 @@
-﻿namespace Hahn_Softwareentwicklung.Entities
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hahn_Softwareentwicklung.Entities
 {
     public class Order
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid OrderId { get; set; }
-        public Buyer Buyer { get; set; }
+
+        [ForeignKey("Buyer")]
+        public Guid BuyerId { get; set; }
+        public virtual Buyer Buyer { get; set; }
+
         public DateTime OrderDate { get; set; }
-        public IList<OrderItem> OrderItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
         public decimal TotalAmount { get; set; }
-        public Payment Payment { get; set; }
+
+        [ForeignKey("Payment")]
+        public Guid PaymentId { get; set; }
+        public virtual Payment Payment { get; set; }
+
         public OrderStatus Status { get; set; }
-        public ShippingAddress ShippingAddress { get; set; }
+
+        [ForeignKey("ShippingAddress")]
+        public Guid ShippingAddressId { get; set; }
+        public virtual ShippingAddress ShippingAddress { get; set; }
 
         public enum OrderStatus
         {
@@ -20,25 +35,42 @@
             Cancelled
         }
 
-        public Order(Buyer buyer, List<OrderItem> orderItems, Payment payment, ShippingAddress shippingAddress)
+        public Order(Guid buyerId, Guid paymentId, Guid shippingAddressId)
         {
             OrderId = Guid.NewGuid();
-            Buyer = buyer;
-            OrderItems = orderItems;
             OrderDate = DateTime.Now;
-            Payment = payment;
-            TotalAmount = orderItems.Sum(x => x.UnitPrice * x.Quantity);
+            BuyerId= buyerId;
+            OrderItems = new List<OrderItem>();
             Status = OrderStatus.Pending;
-            ShippingAddress = shippingAddress;
+            PaymentId= paymentId;
+            ShippingAddressId = shippingAddressId;
+            TotalAmount = getTotalAmount(OrderItems);
         }
 
-        public void UpdateStatus(OrderStatus newStatus)
+        public void addOrderItem(OrderItem orderItem)
         {
-            Status = newStatus;
+            OrderItems.Add(orderItem);
         }
 
-        
+        public void removeOrderItem(OrderItem orderItem) { 
+            OrderItems.Remove(orderItem); 
+        }
+
+        public decimal getTotalAmount(List<OrderItem> orderItems)
+        {
+            decimal totalAmount = 0;
+
+            using (var context = new ApplicationContext())
+            {
+                foreach (var item in orderItems)
+                {
+                    var orderItem = context.OrderItems.Find(item);
+                    totalAmount += orderItem.Quantity * orderItem.UnitPrice;
+                }
+            }
+
+            return totalAmount;
+        }
+
     }
-
-
 }

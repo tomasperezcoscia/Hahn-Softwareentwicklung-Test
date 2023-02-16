@@ -1,0 +1,50 @@
+$background-color: #E5FEFD;
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: $background-color;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 75%;
+    max-height: 100%;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    transform: translateX(-4%);
+    margin-bottom: 15px;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 330px;
+    height: 100%;
+}
+
+
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px;
+    justify-content: center;
+    align-items: center;
+
+    button, mat-form-field {
+        width: 100%;
+    }
+    
+}

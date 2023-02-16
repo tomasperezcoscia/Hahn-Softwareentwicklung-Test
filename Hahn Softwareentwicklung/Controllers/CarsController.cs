@@ -26,7 +26,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // GET: api/Cars/5
         [HttpGet("{id}")]
-        public ActionResult<Car> GetCarById(int id)
+        public ActionResult<Car> GetCarById(Guid id)
         {
             var car = _context.Cars.Find(id);
 
@@ -42,15 +42,16 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPost]
         public ActionResult<Car> AddCar(Car car)
         {
+            car.CarID = Guid.NewGuid();
             _context.Cars.Add(car);
             _context.SaveChanges();
 
-            return CreatedAtAction("GetCar", new { id = car.CarID }, car);
+            return car;
         }
 
         // PUT: api/Cars/5
         [HttpPut("{id}")]
-        public ActionResult<Car> EditCarById(int id, Car car)
+        public ActionResult<Car> EditCarById(Guid id, Car car)
         {
             if (id != car.CarID)
             {
@@ -65,7 +66,7 @@ namespace Hahn_Softwareentwicklung.Controllers
 
         // DELETE: api/Cars/5
         [HttpDelete("{id}")]
-        public ActionResult<Car> DeleteCarById(int id)
+        public ActionResult<Car> DeleteCarById(Guid id)
         {
             var car = _context.Cars.Find(id);
             if (car == null)

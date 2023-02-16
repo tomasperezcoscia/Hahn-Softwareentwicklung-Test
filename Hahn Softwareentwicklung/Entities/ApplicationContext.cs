@@ -31,46 +31,47 @@ namespace Hahn_Softwareentwicklung.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Buyer>().ToTable("Buyers");
-            modelBuilder.Entity<Buyer>(entity =>
+            modelBuilder.Entity<Order>().ToTable("Orders");
+            modelBuilder.Entity<Order>(entity =>
             {
-                entity.HasKey(t => t.BuyerId);
+                entity.HasKey(t => t.OrderId);
             });
-            modelBuilder.Entity<Worker>().ToTable("Workers");
-            modelBuilder.Entity<Worker>(entity =>
+            modelBuilder.Entity<Order>()
+                .HasMany(o => o.OrderItems)
+                .WithOne(oi => oi.Order)
+                .HasForeignKey(oi => oi.OrderId);
+            modelBuilder.Entity<OrderItem>().ToTable("OrderItems");
+            modelBuilder.Entity<OrderItem>(entity =>
             {
-                entity.HasKey(t => t.WorkerId);
+                entity.HasKey(t => t.OrderItemId);
             });
             modelBuilder.Entity<Car>().ToTable("Cars");
             modelBuilder.Entity<Car>(entity =>
             {
                 entity.HasKey(t => t.CarID);
             });
-            modelBuilder.Entity<Inquiry>().ToTable("Inquiries");
-            modelBuilder.Entity<Inquiry>(entity =>
+            modelBuilder.Entity<Buyer>().ToTable("Buyers");
+            modelBuilder.Entity<Buyer>(entity =>
             {
-                entity.HasKey(t => t.InquiryID);
+                entity.HasKey(t => t.BuyerId);
             });
-            modelBuilder.Entity<Order>().ToTable("Orders");
-            modelBuilder.Entity<Order>(entity =>
-            {
-                entity.HasKey(t => t.OrderId);
-            });
+            modelBuilder.Entity<Buyer>()
+                .HasMany(b => b.Orders)
+                .WithOne(o => o.Buyer)
+                .HasForeignKey(o => o.BuyerId);
+
             modelBuilder.Entity<Payment>().ToTable("Payments");
             modelBuilder.Entity<Payment>(entity =>
             {
                 entity.HasKey(t => t.PaymentId);
             });
-            modelBuilder.Entity<PaymentMethod>().ToTable("PaymentMethods");
-            modelBuilder.Entity<PaymentMethod>(entity =>
+            modelBuilder.Entity<Worker>().ToTable("Workers");
+            modelBuilder.Entity<Worker>(entity =>
             {
-                entity.HasKey(t => t.PaymentMethodId);
+                entity.HasKey(t => t.WorkerId);
             });
-            modelBuilder.Entity<ShippingAddress>().ToTable("ShippingAddresses");
-            modelBuilder.Entity<ShippingAddress>(entity =>
-            {
-                entity.HasKey(t => t.ShippingAddressId);
-            });
+            
+            
 
 
             base.OnModelCreating(modelBuilder);
@@ -79,9 +80,9 @@ namespace Hahn_Softwareentwicklung.Entities
         public DbSet<Buyer> Buyers { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Inquiry> Inquiries { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
         public DbSet<ShippingAddress> ShippingAddresses { get; set; }
 
