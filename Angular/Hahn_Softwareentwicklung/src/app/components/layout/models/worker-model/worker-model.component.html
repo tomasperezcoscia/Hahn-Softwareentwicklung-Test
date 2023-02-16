@@ -1,0 +1,61 @@
+<h2 mat-dialog-title>{{actionTitle}} Worker</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="workerForm">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput autocomplete="off" formControlName="workerFullName">
+                    <mat-icon matSuffix>account-box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput autocomplete="off" formControlName="workerEmail">
+                    <mat-icon matSuffix>mail</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput autocomplete="off" formControlName="workerPhone">
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Role</mat-label>
+                    <mat-select formControlName="workerRoleId">
+                        <mat-option *ngFor="let role of roles" [value]="role.roleId">
+                            {{role.roleName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" formControlName="workerPassword"
+                        [type]="hidePassword ? 'password' : 'text'" autocomplete="off">
+                    <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Salary</mat-label>
+                    <input matInput autocomplete="off" formControlName="workerSalary">
+                    <mat-icon matSuffix>attach_money</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+    <button mat-raised-button color="primary"
+        [disabled]="!workerForm.valid"
+        (click)="saveOrUpdate()">{{actionButton}}</button>
+</mat-dialog-actions>

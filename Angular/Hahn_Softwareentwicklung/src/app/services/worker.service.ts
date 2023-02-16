@@ -5,18 +5,19 @@ import { Environment } from 'src/environments/environment';
 import { ResponseApi } from '../interfaces/response-api';
 import { Login } from '../interfaces/login';
 import { Worker } from '../interfaces/worker';
+import { Session } from '../interfaces/session';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WorkerService {
 
-  private apiUrl:string = Environment.endpoint + 'workers';
+  public apiUrl:string = Environment.endpoint + 'workers';
 
   constructor(private http: HttpClient) { }
 
-  login(login: Login): Observable<Login> {
-    return this.http.post<Login>(`${this.apiUrl}/login`, login);
+  login(login: Login): Observable<Session> {
+    return this.http.post<Session>(`${this.apiUrl}/login`, login);
   }
 
   logout(): Observable<ResponseApi> {

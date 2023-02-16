@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hahn_Softwareentwicklung.Entities
 {
@@ -14,13 +15,13 @@ namespace Hahn_Softwareentwicklung.Entities
         public int RoleId { get; set; }
         public decimal Salary { get; set; }
 
-        public Worker(string name, string email, string phoneNumber, int roleId, decimal salary)
+        public Worker(string name, string email, string phoneNumber, int roleId, decimal salary, string password)
         {
             Id = Guid.NewGuid();
             Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
-            Password = name+phoneNumber.ToString();
+            Password = password;
             RoleId = roleId;
             Salary = salary;
         }

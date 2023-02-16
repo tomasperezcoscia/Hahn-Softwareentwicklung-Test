@@ -146,9 +146,9 @@ namespace Hahn_Softwareentwicklung.Entities
                             );
 
             modelBuilder.Entity<Worker>().HasData(
-                            new Worker("Admin", "admin", "123", 1, 999999),
-                            new Worker("HR test", "hrtest", "123", 2, 0),
-                            new Worker("Sales test", "salestest", "123", 3, 0)
+                            new Worker("Admin", "admin", "123", 1, 999999, "admin123"),
+                            new Worker("HR test", "hrtest", "123", 2, 0, "hrtest"),
+                            new Worker("Sales test", "salestest", "123", 3, 0,"salestest")
                             );
 
             modelBuilder.Entity<MenuRole>().HasData(

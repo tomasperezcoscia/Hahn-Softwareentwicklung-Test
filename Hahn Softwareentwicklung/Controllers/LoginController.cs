@@ -1,62 +1,54 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Hahn_Softwareentwicklung.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Hahn_Softwareentwicklung.Entities;
 using Hahn_Softwareentwicklung.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Hahn_Softwareentwicklung.Controllers
 {
-    [Route("api/Workers")]
+    [Route("api/workers")]
     [ApiController]
-    public class LoginController : Controller
+    public class LoginController : ControllerBase
     {
-        private readonly UserManager<Worker> _userManager;
-        private readonly SignInManager<Worker> _signInManager;
+        private readonly ApplicationContext _context;
 
-        public LoginController(UserManager<Worker> userManager, SignInManager<Worker> signInManager)
+        public LoginController(ApplicationContext context)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-        }
-
-        [HttpGet("login")]
-        public IActionResult Login()
-        {
-            return View();
+            _context = context;
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public IActionResult Login(LoginViewModel model)
         {
+            Debug.WriteLine("LoginViewModel: " + JsonConvert.SerializeObject(model));
+
             if (!ModelState.IsValid)
-                return View(model);
-
-            var worker = await _userManager.FindByEmailAsync(model.Email);
-
-            if (worker != null)
             {
-                var result = await _signInManager.PasswordSignInAsync(worker, model.Password, false, false);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Wrong Login Attempt");
-                    return View(model);
-                }
+                return BadRequest(new { error = "Invalid model" });
             }
 
-            ModelState.AddModelError("", "Wrong Login Attempt");
-            return View(model);
-        }
+            var worker = _context.Workers.SingleOrDefault(w => w.Email == model.Email);
 
-        [HttpGet("logout")]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            if (worker == null)
+            {
+                return NotFound(new { error = "Email not found" });
+            }
+
+            if (worker.Password != model.Password)
+            {
+                return Unauthorized(new { error = "Invalid password" });
+            }
+
+            var role = _context.Roles.SingleOrDefault(r => r.Id == worker.RoleId);
+
+            return Ok(new
+            {
+                workerId = worker.Id,
+                workerFullName = worker.Name,
+                workerEmail = worker.Email,
+                workerRole = (role == null) ? "No Role" : role.Name
+            });
+
         }
     }
 }
