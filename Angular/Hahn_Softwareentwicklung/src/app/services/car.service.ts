@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Environment } from 'src/environments/environment';
-import { ResponseApi } from '../interfaces/response-api';
 import { Car } from '../interfaces/car';
 
 @Injectable({
