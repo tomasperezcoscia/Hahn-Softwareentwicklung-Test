@@ -1,1 +1,74 @@
-<p>cars works!</p>
+<h1 style="margin: 20px  0px 0px 40px">Cars</h1>
+
+<mat-card style="margin: 20px 40px 40px 40px">
+    <mat-card-title style="margin: 20px">
+        <button mat-raised-button color="primary" (click)="newCar()">
+            <mat-icon>add</mat-icon>
+            <span>New Car</span>
+        </button>
+    </mat-card-title>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="dashboard-card-content">
+        <mat-form-field appearence="standard">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event)" #input>
+        </mat-form-field>
+
+        <div class="mat-elevation-z2">
+            <table mat-table [dataSource]="carListData">
+                <ng-container matColumnDef="carId">
+                    <th mat-header-cell *matHeaderCellDef>Id</th>
+                    <td mat-cell *matCellDef="let car">{{car.id}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="carBrand">
+                    <th mat-header-cell *matHeaderCellDef>Brand</th>
+                    <td mat-cell *matCellDef="let car">{{car.brand}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="carModel">
+                    <th mat-header-cell *matHeaderCellDef>Model</th>
+                    <td mat-cell *matCellDef="let car">{{car.model}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="carColor">
+                    <th mat-header-cell *matHeaderCellDef>Color</th>
+                    <td mat-cell *matCellDef="let car">{{car.color}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="carYear">
+                    <th mat-header-cell *matHeaderCellDef>Year</th>
+                    <td mat-cell *matCellDef="let car">{{car.year}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="carPrice">
+                    <th mat-header-cell *matHeaderCellDef>Price</th>
+                    <td mat-cell *matCellDef="let car">{{car.price}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td mat-cell *matCellDef="let car">
+                        <button mat-icon-button color="primary" (click)="editCar(car)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteCar(car)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="5">No data found for "{{input.value}}"</td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+
+        </div>
+    </mat-card-content>
+</mat-card>

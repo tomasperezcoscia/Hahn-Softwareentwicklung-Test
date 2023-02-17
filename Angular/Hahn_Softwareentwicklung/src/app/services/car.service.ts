@@ -14,22 +14,22 @@ export class CarService {
   constructor(private http: HttpClient) { }
 
   getCars(): Observable<Car[]> {
-    return this.http.get<Car[]>(`${Environment.endpoint}`);
+    return this.http.get<Car[]>(`${this.apiUrl}`);
   }
 
   getCar(id: string): Observable<Car> {
-    return this.http.get<Car>(`${Environment.endpoint}/${id}`);
+    return this.http.get<Car>(`${this.apiUrl}/${id}`);
   }
 
   addCar(car: Car): Observable<Car> {
-    return this.http.post<Car>(`${Environment.endpoint}`, car);
+    return this.http.post<Car>(`${this.apiUrl}`, car);
   }
 
   updateCar(id: string, car: Car): Observable<any> {  
-    return this.http.put(`${Environment.endpoint}/${id}`, car);
+    return this.http.put(`${this.apiUrl}/${id}`, car);
   }
 
   deleteCar(id: string): Observable<Car> {  
-    return this.http.delete<Car>(`${Environment.endpoint}/${id}`);
+    return this.http.delete<Car>(`${this.apiUrl}/${id}`);
   }
 }

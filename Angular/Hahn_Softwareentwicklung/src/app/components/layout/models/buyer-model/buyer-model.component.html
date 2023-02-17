@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>{{actionTitle}} Buyer</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="buyerForm">
+        <mat-grid-list cols="1" rowHeight="80px" style="width: 100%">
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerFirstName">
+                    <mat-icon matSuffix>account_box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerLastName">
+                    <mat-icon matSuffix>account_box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerEmail">
+                    <mat-icon matSuffix>mail</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerPhone">
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerDateOfBirth">
+                    <mat-icon matSuffix>date_range</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Budget</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerBudget">
+                    <mat-icon matSuffix>attach_money</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+    <button mat-raised-button color="primary"
+        [disabled]="!buyerForm.valid"
+        (click)="saveOrUpdate()">{{actionButton}}</button>
+</mat-dialog-actions>

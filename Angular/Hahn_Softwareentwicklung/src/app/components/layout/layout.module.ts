@@ -10,7 +10,9 @@ import { CarsComponent } from './pages/cars/cars.component';
 import { BuyersComponent } from './pages/buyers/buyers.component';
 
 import { SharedModule } from '../../Reutilizable/shared/shared.module';
-import { WorkerModelComponent } from './models/worker-model/worker-model.component'
+import { WorkerModelComponent } from './models/worker-model/worker-model.component';
+import { CarModelComponent } from './models/car-model/car-model.component';
+import { BuyerModelComponent } from './models/buyer-model/buyer-model.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,10 @@ import { WorkerModelComponent } from './models/worker-model/worker-model.compone
     SalesComponent,
     CarsComponent,
     BuyersComponent,
-    WorkerModelComponent
+    WorkerModelComponent,
+    CarModelComponent,
+    BuyerModelComponent
+
   ],
   imports: [
     CommonModule,

@@ -10,10 +10,10 @@ namespace Hahn_Softwareentwicklung.Entities
         public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
         public float Budget { get; set; }
 
-        public Buyer(string firstName, string lastName, string email, string phoneNumber, DateTime dateOfBirth, float budget)
+        public Buyer(string firstName, string lastName, string email, string phoneNumber, string dateOfBirth, float budget)
         {
             Id = Guid.NewGuid();
             FirstName = firstName;

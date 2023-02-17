@@ -61,7 +61,6 @@ export class HRComponent implements OnInit, AfterViewInit {
       disableClose: true
     }).afterClosed().subscribe(result => {
       if (result === "true") {
-        console.log("llegue");
         this.getWorkers();
       }
     });

@@ -15,26 +15,26 @@ export class BuyerService {
   constructor(private http: HttpClient) { }
 
   getBuyers(): Observable<Buyer[]> {
-    return this.http.get<Buyer[]>(`${Environment.endpoint}`);
+    return this.http.get<Buyer[]>(`${this.apiUrl}`);
   }
 
   getBuyer(id: string): Observable<Buyer> {
-    return this.http.get<Buyer>(`${Environment.endpoint}/${id}`);
+    return this.http.get<Buyer>(`${this.apiUrl}/${id}`);
   }
 
   addBuyer(buyer: Buyer): Observable<Buyer> {
-    return this.http.post<Buyer>(`${Environment.endpoint}`, buyer);
+    return this.http.post<Buyer>(`${this.apiUrl}`, buyer);
   }
 
   updateBuyer(id: string, buyer: Buyer): Observable<any> {
-    return this.http.put(`${Environment.endpoint}/${id}`, buyer);
+    return this.http.put(`${this.apiUrl}/${id}`, buyer);
   }
 
   deleteBuyer(id: string): Observable<Buyer> {
-    return this.http.delete<Buyer>(`${Environment.endpoint}/${id}`);
+    return this.http.delete<Buyer>(`${this.apiUrl}/${id}`);
   }
 
-  getBuyerOrders(id: string): Observable<Order> {
-    return this.http.get<Order>(`${Environment.endpoint}/${id}/orders`);
+  getBuyerOrders(id: string): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.apiUrl}/${id}/orders`);
   } 
 }

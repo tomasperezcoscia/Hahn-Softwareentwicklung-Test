@@ -1,0 +1,50 @@
+<h2 mat-dialog-title>{{actionTitle}} Car</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="carForm">
+        <mat-grid-list cols="1" rowHeight="80px" style="width: 100%">
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Brand</mat-label>
+                    <input matInput autocomplete="off" formControlName="carBrand">
+                    <mat-icon matSuffix>account_box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Model</mat-label>
+                    <input matInput autocomplete="off" formControlName="carModel">
+                    <mat-icon matSuffix>mail</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Year</mat-label>
+                    <input matInput autocomplete="off" formControlName="carYear">
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Color</mat-label>
+                    <input matInput autocomplete="off" formControlName="carColor">
+                    <mat-icon matSuffix>pallete</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearence="outline">
+                    <mat-label>Price</mat-label>
+                    <input matInput autocomplete="off" formControlName="carPrice">
+                    <mat-icon matSuffix>attach_money</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+    <button mat-raised-button color="primary"
+        [disabled]="!carForm.valid"
+        (click)="saveOrUpdate()">{{actionButton}}</button>
+</mat-dialog-actions>
