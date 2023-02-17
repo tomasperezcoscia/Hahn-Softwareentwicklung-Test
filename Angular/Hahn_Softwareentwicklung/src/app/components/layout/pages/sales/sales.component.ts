@@ -12,6 +12,7 @@ import { Car } from 'src/app/interfaces/car';
 import { Order } from 'src/app/interfaces/order';
 import { OrderItem } from 'src/app/interfaces/order-item';
 import { Buyer } from 'src/app/interfaces/buyer';
+import { OrderStatus } from 'src/app/interfaces/order';
 
 import Swal from 'sweetalert2';
 
@@ -29,11 +30,14 @@ export class SalesComponent implements OnInit {
   buyerList: Buyer[] = [];
   buyerListFiltered: Buyer[] = [];
 
+  orderStatusList: OrderStatus[] = [];
+
   orderItems: OrderItem[] = [];
   blockRegisterButton: boolean = false;
 
   selectedCar!: Car;
   selectedBuyer!: Buyer;
+  selectedOrderStatus!: OrderStatus;
   paymentMethod: string = 'Cash';
   totalAmount: number = 0;
 
@@ -43,14 +47,14 @@ export class SalesComponent implements OnInit {
 
   orderItemTable: MatTableDataSource<OrderItem> = new MatTableDataSource<OrderItem>(this.orderItems);
 
-  returnFilteredProducts(search: any): Car {
+  returnFilteredCars(search: any): Car[] {
     const searchedCar = typeof search === 'string' ? search.toLocaleLowerCase : search.model.toLocaleLowerCase;
-    return this.carList.find((car: Car) => car.model.toLocaleLowerCase().includes(searchedCar))!;
+    return this.carList.filter(car => car.model.toLocaleLowerCase().includes(searchedCar));
   }
 
-  returnFilteredBuyers(search: any): Buyer {
+  returnFilteredBuyers(search: any): Buyer[] {
     const searchedBuyer = typeof search === 'string' ? search.toLocaleLowerCase : search.firstName.toLocaleLowerCase;
-    return this.buyerList.find((buyer: Buyer) => buyer.firstName.toLocaleLowerCase().includes(searchedBuyer))!;
+    return this.buyerList.filter(buyer => buyer.firstName.toLocaleLowerCase().includes(searchedBuyer));
   }
 
   constructor(
@@ -74,7 +78,6 @@ export class SalesComponent implements OnInit {
       next: (data) => {
         console.log(data);
         const list = data as Buyer[];
-        console.log(list);
         this.buyerList = list;
       },
       error: (error) => {
@@ -88,7 +91,7 @@ export class SalesComponent implements OnInit {
       next: (data) => {
         console.log(data);
         const list = data as Car[];
-        console.log(list);
+        this.carList = list;
       },
       error: (error) => {
         console.log(error);
@@ -96,12 +99,12 @@ export class SalesComponent implements OnInit {
     })
 
 
-    this.buyerSalesForm.get('buyerSearch')?.valueChanges.subscribe((search) => {
-      this.selectedBuyer = this.returnFilteredBuyers(search);
+    this.buyerSalesForm.get('buyer')?.valueChanges.subscribe((value) => {
+      this.buyerListFiltered = this.returnFilteredBuyers(value);
     });
 
-    this.carSalesForm.get('carSearch')?.valueChanges.subscribe((search) => {
-      this.selectedCar = this.returnFilteredProducts(search);
+    this.carSalesForm.get('car')?.valueChanges.subscribe((value) => {
+      this.carListFiltered = this.returnFilteredCars(value);
     });
   }
 
@@ -109,79 +112,85 @@ export class SalesComponent implements OnInit {
   ngOnInit() {
   }
 
-  showCarDetails(car: Car): string {
-    return car.brand + ' ' + car.model;
-  }
-
-  carForSale(event: any) {
+  carForOrder(event: any) {
     this.selectedCar = event.option.value;
   }
 
+  buyerForOrder(event: any) {
+    this.selectedBuyer = event.option.value;
+  }
+
+  showCarName(car: Car) {
+    return car.brand + ' ' + car.model;
+  }
+
   addCarToOrder() {
-    if (this.carSalesForm.valid) {
-      const _price = this.selectedCar.price;
-      const _quantity = this.carSalesForm.get('carQuantity')?.value;
-      const _total = _price * _quantity;
-      this.totalAmount += _total;
+    const carQuantity = this.carSalesForm.get('carQuantity')?.value;
+    const carPrice = this.selectedCar.price;
+    const _total = carQuantity * carPrice;
 
-      this.orderItems.push({
-        id: "903e7232-de9d-4993-93f4-2b0a2816e2f1",
-        carId: this.selectedCar.id,
-        carDescription: this.selectedCar.brand + ' ' + this.selectedCar.model,
-        orderId: "903e7232-de9d-4993-93f4-2b0a2816e2f1",
-        quantity: _quantity,
-        priceText: String(_price),
-        totalText: String(_total)
-      })
-
-      this.orderItemTable = new MatTableDataSource<OrderItem>(this.orderItems);
+    const orderItem: OrderItem = {
+      id: "903e7232-de9d-4993-93f4-2b0a2816e2f1",
+      carId: this.selectedCar.id,
+      carDescription: this.selectedCar.model,
+      quantity: carQuantity,
+      priceText: String(carPrice),
+      totalText: String(_total)
     }
 
+    this._orderService.addOrderItem(orderItem).subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
+
+    this.orderItems.push(orderItem);
+    this.orderItemTable = new MatTableDataSource<OrderItem>(this.orderItems);
+    this.totalAmount += _total;
     this.carSalesForm.patchValue({
       carSearch: '',
       carQuantity: ''
-      });
+    });
   }
 
   removeCarFromOrder(orderItem: OrderItem) {
+    this.totalAmount -= parseInt(orderItem.totalText);
     this.orderItems = this.orderItems.filter((item) => item.id !== orderItem.id);
     this.orderItemTable = new MatTableDataSource<OrderItem>(this.orderItems);
   }
 
-  registerOrder() {
+  addOrder(){
     this.blockRegisterButton = true;
     const order: Order = {
       id: "903e7232-de9d-4993-93f4-2b0a2816e2f1",
-      buyerId: "903e7232-de9d-4993-93f4-2b0a2816e2f1",
-      shippingAddressId: "903e7232-de9d-4993-93f4-2b0a2816e2f1",
-      orderDate: (new Date()).toISOString(),
-      status: 0
+      buyerId: this.selectedBuyer.id,
+      orderDate: new Date().toLocaleDateString(),
+      totalAmount: this.totalAmount,
+      orderItems: this.orderItems,
+      status: this.selectedOrderStatus
     }
 
     this._orderService.addOrder(order).subscribe({
       next: (data) => {
         console.log(data);
+        this.totalAmount = 0;
         this.orderItems = [];
         this.orderItemTable = new MatTableDataSource<OrderItem>(this.orderItems);
-        this.totalAmount = 0;
-        this.blockRegisterButton = false;
 
         Swal.fire({
-          title: 'Success!',
-          text: 'Order registered successfully',
+          title: 'Order added successfully!',
           icon: 'success',
           confirmButtonText: 'Ok'
-        });
+        })
       },
       error: (error) => {
         console.log(error);
+      },
+      complete: () => {
         this.blockRegisterButton = false;
-        Swal.fire({
-          title: 'Error!',
-          text: 'An error has occurred while registering the order',
-          icon: 'error',
-          confirmButtonText: 'Ok'
-        });
       }
     })
   }

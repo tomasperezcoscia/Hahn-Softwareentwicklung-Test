@@ -93,7 +93,8 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpGet("{id}/OrderItems")]
         public ActionResult<IEnumerable<OrderItem>> GetListOfOrderItemsFromOrder(Guid id)
         {
-            return _context.OrderItems.Where(item => item.OrderId == id).ToList();
+            var order = _context.Orders.Find(id);
+            return order.OrderItems.ToList();
         }
 
         // POST: api/Orders/OrderItems
@@ -203,74 +204,5 @@ namespace Hahn_Softwareentwicklung.Controllers
             return payment;
         }
 
-        // GET: api/Orders/ShippingAddresses
-        [HttpGet("ShippingAddresses")]
-        public ActionResult<IEnumerable<ShippingAddress>> GetListOfShippingAddresses()
-        {
-            return _context.ShippingAddresses.ToList();
-        }
-
-        // GET: api/Orders/{id}/ShippingAddress
-        [HttpGet("{id}/ShippingAddress")]
-        public ActionResult<ShippingAddress> GetShippingAddressOfOrder(Guid id)
-        {
-            var existingOrder = _context.Orders.Find(id);
-            if (existingOrder == null)
-            {
-                return NotFound();
-            }
-            var shippingAddress = _context.ShippingAddresses.SingleOrDefault(x => x.Id == existingOrder.ShippingAddressId);
-            if (shippingAddress == null)
-            {
-                return NotFound();
-            }
-            return shippingAddress;
-        }
-
-        // POST: api/Orders/ShippingAddresses
-        [HttpPost("ShippingAddresses")]
-        public ActionResult<ShippingAddress> AddShippingAddress(ShippingAddress shippingAddress)
-        {
-
-            shippingAddress.Id = Guid.NewGuid();
-            _context.ShippingAddresses.Add(shippingAddress);
-            _context.SaveChanges();
-
-            return shippingAddress;
-        }
-
-        // PUT: api/Orders/ShippingAddresses/{addressId}
-        [HttpPut("ShippingAddresses/{addressId}")]
-        public ActionResult<ShippingAddress> EditShippingAddress(Guid addressId, ShippingAddress shippingAddress)
-        {
-            var existingShippingAddress = _context.ShippingAddresses.Find(addressId);
-            if (existingShippingAddress == null)
-            {
-                return NotFound();
-            }
-
-            existingShippingAddress = shippingAddress;
-
-            _context.ShippingAddresses.Update(existingShippingAddress);
-            _context.SaveChanges();
-
-            return NoContent();
-        }
-
-        // DELETE: api/Orders/ShippingAddresses/{addressId}
-        [HttpDelete("ShippingAddresses/{addressId}")]
-        public ActionResult<ShippingAddress> DeleteShippingAddress(Guid addressId)
-        {
-            var existingShippingAddress = _context.ShippingAddresses.Find(addressId);
-            if (existingShippingAddress == null)
-            {
-                return NotFound();
-            }
-
-            _context.ShippingAddresses.Remove(existingShippingAddress);
-            _context.SaveChanges();
-
-            return existingShippingAddress;
-        }
     }
 }

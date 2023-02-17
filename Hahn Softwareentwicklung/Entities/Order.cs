@@ -9,10 +9,10 @@ namespace Hahn_Softwareentwicklung.Entities
         public Guid Id { get; set; }
         [ForeignKey("Buyer")]
         public Guid? BuyerId { get; set; }
-        [ForeignKey("ShippingAddress")]
-        public Guid? ShippingAddressId { get; set; }
         public DateTime OrderDate { get; set; }
         public OrderStatus Status { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; } // Change to ICollection
+        public decimal TotalAmount { get; set; }
 
         public enum OrderStatus
         {
@@ -23,13 +23,14 @@ namespace Hahn_Softwareentwicklung.Entities
             Cancelled
         }
 
-        public Order(Guid? buyerId, Guid? shippingAddressId)
+        public Order(Guid? buyerId, decimal totalAmount)
         {
             Id = Guid.NewGuid();
             OrderDate = DateTime.Now;
-            BuyerId= buyerId;
+            BuyerId = buyerId;
             Status = OrderStatus.Pending;
-            ShippingAddressId = shippingAddressId;
+            TotalAmount = totalAmount;
+            OrderItems = new List<OrderItem>(); // Initialize the OrderItems collection
         }
     }
 }

@@ -186,7 +186,6 @@ namespace Hahn_Softwareentwicklung.Entities
         public DbSet<Payment> Payments { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
-        public DbSet<ShippingAddress> ShippingAddresses { get; set; }
         public DbSet<Menu> Menues { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<MenuRole> MenuRoles { get; set; }
