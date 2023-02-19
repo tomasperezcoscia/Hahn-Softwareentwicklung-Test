@@ -42,6 +42,25 @@ namespace Hahn_Softwareentwicklung.Controllers
             return order;
         }
 
+        [HttpGet("dateRange/{startDate}/{endDate}")]
+        public ActionResult<IEnumerable<Order>> getOrdersByDateRange(DateTime startDate, DateTime endDate) {
+            var orders = _context.Orders.Where(o => o.OrderDate >= startDate && o.OrderDate <= endDate).ToList();
+            return Ok(orders);
+        }
+
+        [HttpGet("paymentMethod/{paymentMethod}")]
+        public ActionResult<IEnumerable<Order>> getOrdersByPaymentMethod(string paymentMethod)
+        {
+            var orders = _context.Orders.Where(o => o.PaymentMethod == paymentMethod).ToList();
+            return Ok(orders);
+        }
+
+        [HttpGet("paymentMethods")]
+        public ActionResult<IEnumerable<PaymentMethod>> getPaymentMethods()
+        {
+            return Ok(_context.PaymentMethods.ToList());
+        }
+
         // POST: api/Orders
         [HttpPost]
         public ActionResult<Order> AddOrder(Order order)
@@ -57,13 +76,15 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPut("{id}")]
         public ActionResult<Order> EditOrderById(Guid id, Order order)
         {
-            if (id != order.Id)
+            var orderS = _context.Orders.FirstOrDefault(o => o.Id == id);
+
+            if (orderS == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
+            _context.Entry(orderS).State = EntityState.Detached;
             _context.Entry(order).State = EntityState.Modified;
-            _context.SaveChanges();
 
             return NoContent();
         }
@@ -143,73 +164,6 @@ namespace Hahn_Softwareentwicklung.Controllers
             _context.SaveChanges();
 
             return orderItem;
-        }
-
-
-        // GET: api/Orders/Payments
-        [HttpGet("Payments")]
-        public ActionResult<IEnumerable<Payment>> GetListOfPayments()
-        {
-            return _context.Payments.ToList();
-        }
-
-        // GET: api/Orders/{id}/Payments
-        [HttpGet("{id}/Payments")]
-        public ActionResult<IEnumerable<Payment>> GetListOfOrderPayments(Guid id)
-        {
-            return _context.Payments.Where(item => item.OrderId == id).ToList();
-        }
-
-        // POST: api/Orders/Payment
-        [HttpPost("Payment")]
-        public ActionResult<Payment> AddPayment(Payment payment)
-        {
-
-            payment.Id = Guid.NewGuid();
-            _context.Payments.Add(payment);
-            _context.SaveChanges();
-
-            return payment;
-        }
-
-        // PUT: api/Orders/Payments/{paymentId}
-        [HttpPut("Payments/{paymentId}")]
-        public ActionResult<Payment> EditPayment(Guid paymentId, Payment payment)
-        {
-            var existingPayment = _context.Payments.Find(paymentId);
-            if (existingPayment == null)
-            {
-                return NotFound();
-            }
-
-            existingPayment = payment;
-
-            _context.Payments.Update(existingPayment);
-            _context.SaveChanges();
-
-            return NoContent();
-        }
-
-        // DELETE: api/Orders/Payments/{paymentId}
-        [HttpDelete("Payments/{paymentId}")]
-        public ActionResult<Payment> DeletePayment(Guid paymentId)
-        {
-            var payment = _context.Payments.Find(paymentId);
-            if (payment == null)
-            {
-                return NotFound();
-            }
-
-            _context.Payments.Remove(payment);
-            _context.SaveChanges();
-
-            return payment;
-        }
-
-        [HttpGet("paymentMethods")]
-        public ActionResult<IEnumerable<PaymentMethod>> getPaymentMethods()
-        {
-            return _context.PaymentMethods.ToList();
         }
     }
 }

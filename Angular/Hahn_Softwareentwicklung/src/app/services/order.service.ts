@@ -5,7 +5,6 @@ import { Environment } from 'src/environments/environment';
 import { ResponseApi } from '../interfaces/response-api';
 import { Order } from '../interfaces/order';
 import { OrderItem } from '../interfaces/order-item';
-import { Payment } from '../interfaces/payment';
 import { PaymentMethod } from '../interfaces/paymentmethod';
 
 @Injectable({
@@ -37,6 +36,14 @@ export class OrderService {
     return this.http.delete<Order>(`${this.apiUrl}/${id}`);
   }
 
+  getOrdersByDateRange(startDate: Date, endDate: Date): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.apiUrl}/dateRange/${startDate}/${endDate}`);
+  }
+
+  getOrdersByPaymentMethod(paymentMethod: string): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.apiUrl}/paymentMethod/${paymentMethod}`);
+  }
+
   getOrderItems(): Observable<OrderItem[]> {
     return this.http.get<OrderItem[]>(`${this.apiUrl}/orderitems`);
   }
@@ -55,26 +62,6 @@ export class OrderService {
 
   deleteOrderItem(itemId: string): Observable<OrderItem> {
     return this.http.delete<OrderItem>(`${this.apiUrl}/orderitems/${itemId}`);
-  }
-
-  getPayments(): Observable<Payment[]> {
-    return this.http.get<Payment[]>(`${this.apiUrl}/payments`);
-  }
-
-  getOrderPayments(id: string): Observable<Payment[]> {
-    return this.http.get<Payment[]>(`${this.apiUrl}/${id}/payments`);
-  }
-
-  addPayment(payment: Payment): Observable<Payment> {
-    return this.http.post<Payment>(`${this.apiUrl}/payments`, payment);
-  }
-
-  updatePayment(paymentId: string, payment: Payment): Observable<any> {
-    return this.http.put(`${this.apiUrl}/payments/${paymentId}`, payment);
-  }
-
-  deletePayment(paymentId: string): Observable<Payment> {
-    return this.http.delete<Payment>(`${this.apiUrl}/payments/${paymentId}`);
   }
 
   getPaymentMethods(): Observable<PaymentMethod[]> {

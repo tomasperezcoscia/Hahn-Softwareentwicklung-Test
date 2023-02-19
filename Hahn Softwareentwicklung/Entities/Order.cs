@@ -11,6 +11,7 @@ namespace Hahn_Softwareentwicklung.Entities
         public Guid? BuyerId { get; set; }
         public DateTime OrderDate { get; set; }
         public OrderStatus Status { get; set; }
+        public string PaymentMethod { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; } // Change to ICollection
         public decimal TotalAmount { get; set; }
 
@@ -23,7 +24,7 @@ namespace Hahn_Softwareentwicklung.Entities
             Cancelled
         }
 
-        public Order(Guid? buyerId, decimal totalAmount)
+        public Order(Guid? buyerId, decimal totalAmount, string paymentMethod)
         {
             Id = Guid.NewGuid();
             OrderDate = DateTime.Now;
@@ -31,6 +32,7 @@ namespace Hahn_Softwareentwicklung.Entities
             Status = OrderStatus.Pending;
             TotalAmount = totalAmount;
             OrderItems = new List<OrderItem>(); // Initialize the OrderItems collection
+            PaymentMethod = paymentMethod;
         }
     }
 }

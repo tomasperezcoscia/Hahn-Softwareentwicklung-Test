@@ -6,6 +6,7 @@ export interface Order {
     orderDate: Date,
     totalAmount: number,
     orderItems: OrderItem[],
+    paymentMethod: string,
     status: number
 }
 

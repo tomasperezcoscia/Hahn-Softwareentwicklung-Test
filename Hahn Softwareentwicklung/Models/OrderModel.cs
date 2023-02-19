@@ -7,17 +7,17 @@
         public DateTime OrderDate { get; set; }
         public IList<OrderItemModel> OrderItems { get; set; }
         public decimal TotalAmount { get; set; }
-        public IList<PaymentModel> Payments { get; set; }
+        public string PaymentMethod { get; set; }
         public OrderStatus Status { get; set; }
         public ShippingAddressModel ShippingAddress { get; set; }
 
-        public OrderModel(Guid id, BuyerModel buyer, DateTime orderDate, List<OrderItemModel> orderItems, IList<PaymentModel> payments, OrderStatus status, ShippingAddressModel shippingAddress)
+        public OrderModel(Guid id, BuyerModel buyer, DateTime orderDate, List<OrderItemModel> orderItems, string paymentMethod, OrderStatus status, ShippingAddressModel shippingAddress)
         {
             Id = id;
             Buyer = buyer;
             OrderItems = orderItems;
             OrderDate = orderDate;
-            Payments = payments;
+            PaymentMethod = paymentMethod;
             TotalAmount = orderItems.Sum(x => x.Car.Price * x.Quantity);
             Status = status;
             ShippingAddress = shippingAddress;

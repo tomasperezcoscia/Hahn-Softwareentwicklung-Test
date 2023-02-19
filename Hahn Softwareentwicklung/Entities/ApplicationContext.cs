@@ -53,11 +53,6 @@ namespace Hahn_Softwareentwicklung.Entities
             {
                 entity.HasKey(t => t.Id);
             });
-            modelBuilder.Entity<Payment>().ToTable("Payments");
-            modelBuilder.Entity<Payment>(entity =>
-            {
-                entity.HasKey(t => t.Id);
-            });
             modelBuilder.Entity<Worker>().ToTable("Workers");
             modelBuilder.Entity<Worker>(entity =>
             {
@@ -194,7 +189,6 @@ namespace Hahn_Softwareentwicklung.Entities
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Payment> Payments { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
         public DbSet<Menu> Menues { get; set; }

@@ -6,6 +6,7 @@ import { HRComponent } from './pages/hr/hr.component';
 import { SalesComponent } from './pages/sales/sales.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { BuyersComponent } from './pages/buyers/buyers.component';
+import { SalesHistoryComponent } from './pages/sales-history/sales-history.component';
 
 
 const routes: Routes = [{
@@ -17,6 +18,7 @@ const routes: Routes = [{
     {path: 'sales', component: SalesComponent},
     {path: 'cars', component: CarsComponent},
     {path: 'buyers', component: BuyersComponent},
+    {path: 'sales-history', component: SalesHistoryComponent},
   ]
 
 }];

@@ -229,13 +229,26 @@ export class SalesComponent implements OnInit {
       orderDate: new Date(),
       totalAmount: this.totalAmount,
       orderItems: this.orderItems,
+      paymentMethod: this.selectedPaymentMethod.name,
       status: this.selectedOrderStatus
     }
+
+    console.log(order.orderItems + "Oorder pushed on AddOrder")
 
     this._orderService.addOrder(order).subscribe({
       next: (data) => {
         console.log(data);
+        order.id = data.id;
+        this._orderService.updateOrder(data.id,order).subscribe({
+          next: (data) => {
+            console.log(data);
+          },
+          error: (error) => {
+            console.log(error);
+          }
+        })
         this.totalAmount = 0;
+        
         this.orderItems = [];
         this.orderItemTable = new MatTableDataSource<OrderItem>(this.orderItems);
 

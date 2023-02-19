@@ -13,6 +13,8 @@ import { SharedModule } from '../../Reutilizable/shared/shared.module';
 import { WorkerModelComponent } from './models/worker-model/worker-model.component';
 import { CarModelComponent } from './models/car-model/car-model.component';
 import { BuyerModelComponent } from './models/buyer-model/buyer-model.component';
+import { SaleHistoryModelComponent } from './models/sale-history-model/sale-history-model.component';
+import { SalesHistoryComponent } from './pages/sales-history/sales-history.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { BuyerModelComponent } from './models/buyer-model/buyer-model.component'
     BuyersComponent,
     WorkerModelComponent,
     CarModelComponent,
-    BuyerModelComponent
+    BuyerModelComponent,
+    SaleHistoryModelComponent,
+    SalesHistoryComponent
 
   ],
   imports: [
