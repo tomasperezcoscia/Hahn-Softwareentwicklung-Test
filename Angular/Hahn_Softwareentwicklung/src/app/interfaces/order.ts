@@ -3,7 +3,7 @@ import { OrderItem } from './order-item';
 export interface Order {
     id: string,
     buyerId: string,
-    orderDate: string,
+    orderDate: Date,
     totalAmount: number,
     orderItems: OrderItem[],
     status: number

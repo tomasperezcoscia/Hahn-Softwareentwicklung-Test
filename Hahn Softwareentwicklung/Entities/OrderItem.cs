@@ -12,9 +12,9 @@ namespace Hahn_Softwareentwicklung.Entities
         public string PriceText { get; set; }
         public string TotalText { get; set; }
 
-        public OrderItem(Guid carId, int quantity, string carDescription, string priceText, string totalText)
+        public OrderItem(Guid id, Guid carId,int quantity, string carDescription, string priceText, string totalText)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             CarId = carId;
             Quantity = quantity;
             CarDescription = carDescription;

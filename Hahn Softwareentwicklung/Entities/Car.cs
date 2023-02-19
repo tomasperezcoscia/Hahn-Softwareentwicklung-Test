@@ -12,6 +12,7 @@ namespace Hahn_Softwareentwicklung.Entities
         public decimal Price { get; set; }
         public string Color { get; set; }
 
+        public Car() { }
         public Car(string brand, string model, int year, decimal price, string color)
         {
             Id = Guid.NewGuid();

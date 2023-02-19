@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Security.Policy;
 using Microsoft.EntityFrameworkCore;
 
 /*I will use only one DbContext since the app is kind of small at the moment, in case of it being bigger, i should divide it in one Context per Module
@@ -175,6 +177,15 @@ namespace Hahn_Softwareentwicklung.Entities
                 new Car("Ford", "Focus", 2022, 3000, "Blue"),
                 new Car("Nissan", "GTR 34", 2002, 150000, "Blue")
                 );
+
+            modelBuilder.Entity<PaymentMethod>().HasData(
+                    new PaymentMethod { Id=1 ,Name = "None" },
+                    new PaymentMethod { Id=2 , Name = "CreditCard" },
+                    new PaymentMethod { Id=3 ,Name = "DebitCard" },
+                    new PaymentMethod { Id=4 ,Name = "NetBanking" },
+                    new PaymentMethod { Id=5, Name = "UPI" },
+                    new PaymentMethod { Id = 6, Name = "Cash"}
+                   );
 
             base.OnModelCreating(modelBuilder);
         }

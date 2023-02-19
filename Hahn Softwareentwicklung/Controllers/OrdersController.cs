@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Hahn_Softwareentwicklung.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Text.Json;
 
 namespace Hahn_Softwareentwicklung.Controllers
 {
@@ -12,10 +13,12 @@ namespace Hahn_Softwareentwicklung.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly ApplicationContext _context;
+        private readonly ILogger<OrdersController> _logger;
 
-        public OrdersController(ApplicationContext context)
+        public OrdersController(ApplicationContext context, ILogger<OrdersController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Orders
@@ -101,8 +104,7 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpPost("OrderItems")]
         public ActionResult<OrderItem> AddOrderItem(OrderItem orderItem)
         {
-
-            orderItem.Id = Guid.NewGuid();
+            _logger.LogInformation(JsonSerializer.Serialize(orderItem));
             _context.OrderItems.Add(orderItem);
             _context.SaveChanges();
 
@@ -204,5 +206,10 @@ namespace Hahn_Softwareentwicklung.Controllers
             return payment;
         }
 
+        [HttpGet("paymentMethods")]
+        public ActionResult<IEnumerable<PaymentMethod>> getPaymentMethods()
+        {
+            return _context.PaymentMethods.ToList();
+        }
     }
 }

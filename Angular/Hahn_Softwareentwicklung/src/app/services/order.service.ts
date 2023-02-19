@@ -6,6 +6,7 @@ import { ResponseApi } from '../interfaces/response-api';
 import { Order } from '../interfaces/order';
 import { OrderItem } from '../interfaces/order-item';
 import { Payment } from '../interfaces/payment';
+import { PaymentMethod } from '../interfaces/paymentmethod';
 
 @Injectable({
   providedIn: 'root'
@@ -76,5 +77,8 @@ export class OrderService {
     return this.http.delete<Payment>(`${this.apiUrl}/payments/${paymentId}`);
   }
 
+  getPaymentMethods(): Observable<PaymentMethod[]> {
+    return this.http.get<PaymentMethod[]>(`${this.apiUrl}/paymentMethods`);
+  }
 
 }
