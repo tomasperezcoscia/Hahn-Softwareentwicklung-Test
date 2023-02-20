@@ -1,0 +1,121 @@
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\appsettings.Development.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\appsettings.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Hahn Softwareentwicklung.exe
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Hahn Softwareentwicklung.deps.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Hahn Softwareentwicklung.runtimeconfig.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Hahn Softwareentwicklung.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Hahn Softwareentwicklung.pdb
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Azure.Core.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Azure.Identity.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\FluentValidation.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Net.Http.Formatting.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Web.Http.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Web.Http.WebHost.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Data.Sqlite.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Identity.Client.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.OpenApi.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Newtonsoft.Json.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\SQLitePCLRaw.core.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\Swashbuckle.Core.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Drawing.Common.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Memory.Data.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Runtime.Caching.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Security.Permissions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Text.Encodings.Web.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Text.Json.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\System.Windows.Extensions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\WebActivatorEx.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-x64\native\libsqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\osx-x64\native\libsqlite3.dylib
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win7-x64\native\sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win7-x86\native\sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\alpine-arm\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\alpine-arm64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\browser-wasm\nativeassets\net6.0\e_sqlite3.a
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.csproj.AssemblyReference.cache
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.AssemblyInfoInputs.cache
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.AssemblyInfo.cs
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.csproj.CoreCompileInputs.cache
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets\msbuild.Hahn Softwareentwicklung.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets\msbuild.build.Hahn Softwareentwicklung.props
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.Hahn Softwareentwicklung.props
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.Hahn Softwareentwicklung.props
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets.pack.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets.build.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\staticwebassets.development.json
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\scopedcss\bundle\Hahn Softwareentwicklung.styles.css
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.csproj.CopyComplete
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\refint\Hahn Softwareentwicklung.dll
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.pdb
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\Hahn Softwareentwicklung.genruntimeconfig.cache
+C:\Users\plastik\Documents\Test task\Hahn-Softwareentwicklung-Test\Hahn Softwareentwicklung\obj\Release\net6.0\ref\Hahn Softwareentwicklung.dll
