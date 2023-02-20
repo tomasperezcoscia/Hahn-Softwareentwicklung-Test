@@ -46,7 +46,8 @@ namespace Hahn_Softwareentwicklung.Controllers
                 workerId = worker.Id,
                 workerFullName = worker.Name,
                 workerEmail = worker.Email,
-                workerRole = (role == null) ? "No Role" : role.Name
+                workerRole = (role == null) ? "No Role" : role.Name,
+                workerRoleId= worker.RoleId
             });
 
         }

@@ -3,4 +3,5 @@ export interface Session {
     workerFullName: string,
     workerEmail: string,
     workerRole: string,
+    workerRoleId: number,
 }

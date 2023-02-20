@@ -8,10 +8,7 @@ import {OrderItem} from 'src/app/interfaces/order-item';
 @Component({
   selector: 'app-sale-history-model',
   templateUrl: './sale-history-model.component.html',
-  styleUrls: ['./sale-history-model.component.scss'],
-  providers: [
-    { provide: MAT_DIALOG_DATA, useValue: {} },
-  ]
+  styleUrls: ['./sale-history-model.component.scss']
 })
 export class SaleHistoryModelComponent implements OnInit {
 
@@ -25,7 +22,7 @@ export class SaleHistoryModelComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Order
   ) { 
-
+    console.log(data)
     this.registeredDate = data.orderDate;
     this.totalAmount = data.totalAmount;
     this.paymentMethod = data.paymentMethod;

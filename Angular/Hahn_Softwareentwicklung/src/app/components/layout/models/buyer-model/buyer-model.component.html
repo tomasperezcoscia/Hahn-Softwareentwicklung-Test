@@ -33,16 +33,10 @@
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-form-field appearence="outline">
-                    <mat-label>Date of Birth</mat-label>
-                    <input matInput autocomplete="off" formControlName="buyerDateOfBirth">
-                    <mat-icon matSuffix>date_range</mat-icon>
-                </mat-form-field>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-form-field appearence="outline">
-                    <mat-label>Budget</mat-label>
-                    <input matInput autocomplete="off" formControlName="buyerBudget">
-                    <mat-icon matSuffix>attach_money</mat-icon>
+                    <mat-label>Date of birth</mat-label>
+                    <input matInput autocomplete="off" formControlName="buyerDateOfBirth" [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
             </mat-grid-tile>
         </mat-grid-list>

@@ -67,7 +67,9 @@ namespace Hahn_Softwareentwicklung.Controllers
         {
             order.Id = Guid.NewGuid();
             _context.Orders.Add(order);
+         
             _context.SaveChanges();
+
 
             return order;
         }

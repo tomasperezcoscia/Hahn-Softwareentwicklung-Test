@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 
-import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { HRComponent } from './pages/hr/hr.component';
 import { SalesComponent } from './pages/sales/sales.component';
 import { CarsComponent } from './pages/cars/cars.component';
@@ -18,7 +17,6 @@ import { SalesHistoryComponent } from './pages/sales-history/sales-history.compo
 
 @NgModule({
   declarations: [
-    DashBoardComponent,
     HRComponent,
     SalesComponent,
     CarsComponent,

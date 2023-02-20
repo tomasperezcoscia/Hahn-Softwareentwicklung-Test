@@ -89,16 +89,16 @@ namespace Hahn_Softwareentwicklung.Entities
                             new Menu
                             {
                                 Id = 1,
-                                Name = "Dashboard",
-                                Icon = "dashboard",
-                                Url = "/pages/dashboard"
+                                Name = "Sales history",
+                                Icon = "search",
+                                Url = "/pages/sales-history"
                             },
                             new Menu
                             {
                                 Id = 2,
                                 Name = "HR",
                                 Icon = "assignment_ind",
-                                Url = "/pages/humanresources"
+                                Url = "/pages/hr"
                             },
                             new Menu
                             {
@@ -120,20 +120,6 @@ namespace Hahn_Softwareentwicklung.Entities
                                 Name = "Cars",
                                 Icon = "directions_car",
                                 Url = "/pages/cars"
-                            },
-                            new Menu
-                            {
-                                Id = 6,
-                                Name = "LogOut",
-                                Icon = "weekend",
-                                Url = "/pages/logout"
-                            },
-                            new Menu
-                            {
-                                Id = 7,
-                                Name = "LogIn",
-                                Icon = "create",
-                                Url = "/pages/login"
                             });
 
             modelBuilder.Entity<Role>().HasData(
@@ -154,18 +140,12 @@ namespace Hahn_Softwareentwicklung.Entities
                                 new MenuRole { Id = 3, roleId = 1, menuId = 3 },
                                 new MenuRole { Id = 4, roleId = 1, menuId = 4 },
                                 new MenuRole { Id = 5, roleId = 1, menuId = 5 },
-                                new MenuRole { Id = 6, roleId = 1, menuId = 6 },
-                                new MenuRole { Id = 7, roleId = 1, menuId = 7 },
-                                new MenuRole { Id = 8, roleId = 2, menuId = 1 },
-                                new MenuRole { Id = 9, roleId = 2, menuId = 2 },
-                                new MenuRole { Id = 10, roleId = 2, menuId = 6 },
-                                new MenuRole { Id = 11, roleId = 2, menuId = 7 },
-                                new MenuRole { Id = 12, roleId = 3, menuId = 1 },
-                                new MenuRole { Id = 13, roleId = 3, menuId = 3 },
-                                new MenuRole { Id = 14, roleId = 3, menuId = 4 },
-                                new MenuRole { Id = 15, roleId = 3, menuId = 5 },
-                                new MenuRole { Id = 16, roleId = 3, menuId = 6 },
-                                new MenuRole { Id = 17, roleId = 3, menuId = 7 }
+                                new MenuRole { Id = 6, roleId = 2, menuId = 2 },
+                                new MenuRole { Id = 7, roleId = 2, menuId = 5 },
+                                new MenuRole { Id = 8, roleId = 3, menuId = 1 },
+                                new MenuRole { Id = 9, roleId = 3, menuId = 3 },
+                                new MenuRole { Id = 10, roleId = 3, menuId = 4 },
+                                new MenuRole { Id = 11, roleId = 3, menuId = 5 }
                             );
             modelBuilder.Entity<Car>().HasData(
                 new Car("Ford","Fiesta",2018,1500,"Red"),

@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 })
 export class BuyersComponent implements OnInit, AfterViewInit {
 
-  tableColumns: string[] = ['buyerId', 'buyerFirstName', 'buyerLastName', 'buyerEmail', 'buyerPhone', 'buyerDateOfBirth', 'buyerBudget', 'actions'];
+  tableColumns: string[] = ['buyerId', 'buyerFirstName', 'buyerLastName', 'buyerEmail', 'buyerPhone', 'buyerDateOfBirth', 'actions'];
   initialData: Buyer[] = [];
   buyerListData: MatTableDataSource<Buyer> = new MatTableDataSource<Buyer>(this.initialData);
   @ViewChild(MatPaginator) tablePaginator!: MatPaginator;

@@ -47,14 +47,16 @@ export class LoginComponent implements OnInit {
       this._workerService.login(login).subscribe(
         {
           next: (data) => {
-            console.log(data);
+            console.log(data + "data return from loginn");
             // Save the user session and navigate to the dashboard page
             const session: Session = { 
               workerId: data.workerId,
               workerFullName: data.workerFullName,
               workerEmail: data.workerEmail,
               workerRole: data.workerRole,
+              workerRoleId: data.workerRoleId,
              };
+             console.log("saving session with" + session)
             this._utilityService.saveUserSession(session);
             this._router.navigateByUrl('/pages');
             this.showSpinner = false;

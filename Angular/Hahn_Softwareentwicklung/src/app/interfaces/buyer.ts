@@ -5,5 +5,4 @@ export interface Buyer {
     email: string;
     phoneNumber: string;
     dateOfBirth: Date;
-    budget: number;
 }

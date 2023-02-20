@@ -6,10 +6,26 @@ import { Buyer } from 'src/app/interfaces/buyer';
 import { BuyerService } from 'src/app/services/buyer.service';
 import { UtilityService } from 'src/app/Reutilizable/utility.service';
 
+import { MAT_DATE_FORMATS } from '@angular/material/core';
+import * as moment from 'moment';
+
+export const MY_DATA_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMMM YYYY',
+  },
+};
+
 @Component({
   selector: 'app-buyer',
   templateUrl: './buyer-model.component.html',
-  styleUrls: ['./buyer-model.component.scss']
+  styleUrls: ['./buyer-model.component.scss'],
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: MY_DATA_FORMATS },
+  ],
 })
 export class BuyerModelComponent implements OnInit{
 
@@ -31,7 +47,6 @@ export class BuyerModelComponent implements OnInit{
       buyerEmail: ['', [Validators.email, Validators.minLength(10)]],
       buyerPhone: ['', [Validators.required, Validators.minLength(6)]],
       buyerDateOfBirth: ['', [Validators.required, Validators.minLength(10)]],
-      buyerBudget: ['', [Validators.required, Validators.minLength(3)]],
     });
 
     if (this.data != null) {
@@ -49,7 +64,6 @@ export class BuyerModelComponent implements OnInit{
         buyerEmail: this.data.email,
         buyerPhone: this.data.phoneNumber,
         buyerDateOfBirth: this.data.dateOfBirth,
-        buyerBudget: this.data.budget,
       });
     }
   }
@@ -62,7 +76,6 @@ export class BuyerModelComponent implements OnInit{
       email: this.buyerForm.get('buyerEmail')?.value,
       phoneNumber: this.buyerForm.get('buyerPhone')?.value,
       dateOfBirth: this.buyerForm.get('buyerDateOfBirth')?.value,
-      budget: this.buyerForm.get('workerBudget')?.value
     }
 
     if (this.buyerForm.valid) {

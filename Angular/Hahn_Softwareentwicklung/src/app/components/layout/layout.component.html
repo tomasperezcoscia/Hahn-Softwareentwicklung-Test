@@ -5,40 +5,27 @@
         <button mat-icon-button (click)="sidenav.toggle();">
             <mat-icon>menu</mat-icon>
         </button>
+
+        <span style="flex: 1 1 auto;"></span>
+        <label style="font-size: 14px; margin-right:20px">
+            <mat-icon>account_circle</mat-icon>
+            <span>{{userEmail}} | {{userRoleName}}</span>
+        </label>
+        <button mat-button (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+        </button>
+
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px;">
         <mat-nav-list>
-            <mat-list-item style="display: flex;" routerLink="/pages/dashboard">
-                <mat-icon matListItemIcon>dashboard</mat-icon>
-                <div mat-line>Dashboard</div>
-            </mat-list-item>
 
-            <mat-list-item routerLink="/pages/hr">
-                <mat-icon matListItemIcon>assignment_ind</mat-icon>
-                <div mat-line>HR</div>
-            </mat-list-item>
-
-            <mat-list-item routerLink="/pages/sales">
-                <mat-icon matListItemIcon>attach_money</mat-icon>
-                <div mat-line>Sales</div>
-            </mat-list-item>
-
-            <mat-list-item routerLink="/pages/buyers">
-                <mat-icon matListItemIcon>account_circle</mat-icon>
-                <div mat-line>Buyers</div>
-            </mat-list-item>
-
-            <mat-list-item routerLink="/pages/cars">
-                <mat-icon matListItemIcon>directions_car</mat-icon>
-                <div mat-line>Cars</div>
-            </mat-list-item>
-
-            <mat-list-item routerLink="/pages/sales-history">
-                <mat-icon matListItemIcon>search</mat-icon>
-                <div mat-line>Sales History</div>
+            <mat-list-item *ngFor="let menu of menuList" routerLink="{{menu.url}}">
+                <mat-icon matListItemIcon>{{menu.icon}}</mat-icon>
+                <div mat-line>{{menu.name}}</div>
             </mat-list-item>
 
         </mat-nav-list>
