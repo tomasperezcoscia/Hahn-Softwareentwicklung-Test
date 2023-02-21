@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I4ewP3FZ56c4QavCC497IRYXvNbKrN2mIAeli9nad+8AMGsnhC9cqewPoOFHSmakxpxai7H8c2htvmz8SmthoQ==",
+  "dgSpecHash": "B6PL7CzSEpI0ui6b4UmuxBXLJdamUdSWEZs1izrlpcdKkFIfywhCxzR0+j0o9PIQRFQGVYqxuDrwfhYfYO0hQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Backend\\Backend.csproj",
+  "projectFilePath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Hahn Softwareentwicklung\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\plastik\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\plastik\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

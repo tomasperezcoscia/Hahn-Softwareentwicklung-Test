@@ -4214,11 +4214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Backend\\Backend.csproj",
+      "projectUniqueName": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Hahn Softwareentwicklung\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Backend\\Backend.csproj",
+      "projectPath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Hahn Softwareentwicklung\\Backend.csproj",
       "packagesPath": "C:\\Users\\plastik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Backend\\obj\\",
+      "outputPath": "C:\\Users\\plastik\\Documents\\Test task\\Hahn-Softwareentwicklung-Test\\Hahn Softwareentwicklung\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\plastik\\AppData\\Roaming\\NuGet\\NuGet.Config",
