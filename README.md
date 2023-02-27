@@ -34,5 +34,7 @@ The app is a car dealership management system that allows you to manage inventor
   - Select the buyer you want to sell the car to, and the payment method.
   
   - Add the order.
+  
+  - You can watch order history in the sales history tab.
  
  
