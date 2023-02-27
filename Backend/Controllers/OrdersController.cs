@@ -67,7 +67,6 @@ namespace Hahn_Softwareentwicklung.Controllers
         {
             order.Id = Guid.NewGuid();
             _context.Orders.Add(order);
-         
             _context.SaveChanges();
 
 
@@ -88,7 +87,9 @@ namespace Hahn_Softwareentwicklung.Controllers
             _context.Entry(orderS).State = EntityState.Detached;
             _context.Entry(order).State = EntityState.Modified;
 
-            return NoContent();
+            _context.SaveChanges();
+
+            return orderS;
         }
 
         // DELETE: api/Orders/5
@@ -119,8 +120,11 @@ namespace Hahn_Softwareentwicklung.Controllers
         [HttpGet("{id}/OrderItems")]
         public ActionResult<IEnumerable<OrderItem>> GetListOfOrderItemsFromOrder(Guid id)
         {
-            var order = _context.Orders.Find(id);
-            return order.OrderItems.ToList();
+            var orderItems = _context.OrderItems
+                .Where(oi => oi.OrderId == id)
+                .ToList();
+
+            return orderItems;
         }
 
         // POST: api/Orders/OrderItems

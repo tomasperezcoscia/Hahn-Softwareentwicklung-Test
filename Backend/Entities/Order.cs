@@ -12,7 +12,6 @@ namespace Hahn_Softwareentwicklung.Entities
         public DateTime OrderDate { get; set; }
         public OrderStatus Status { get; set; }
         public string PaymentMethod { get; set; }
-        public ICollection<OrderItem>? OrderItems { get; set; } // Change to ICollection
         public decimal TotalAmount { get; set; }
 
         public enum OrderStatus
@@ -32,7 +31,6 @@ namespace Hahn_Softwareentwicklung.Entities
             Status = OrderStatus.Pending;
             TotalAmount = totalAmount;
             PaymentMethod = paymentMethod;
-            OrderItems = new List<OrderItem>();
         }
     }
 }

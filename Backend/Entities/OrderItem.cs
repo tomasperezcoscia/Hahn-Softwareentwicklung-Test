@@ -7,12 +7,13 @@ namespace Hahn_Softwareentwicklung.Entities
     {
         public Guid Id { get; set; }
         public Guid CarId { get; set; }
+        public Guid OrderId { get; set; }
         public string CarDescription { get; set; }
         public int Quantity { get; set; }
         public string PriceText { get; set; }
         public string TotalText { get; set; }
 
-        public OrderItem(Guid id, Guid carId,int quantity, string carDescription, string priceText, string totalText)
+        public OrderItem(Guid id, Guid carId,int quantity, string carDescription, string priceText, string totalText, Guid orderId)
         {
             Id = id;
             CarId = carId;
@@ -20,6 +21,7 @@ namespace Hahn_Softwareentwicklung.Entities
             CarDescription = carDescription;
             PriceText = priceText;
             TotalText = totalText;
+            OrderId = orderId;
         }
     }
 }

@@ -33,6 +33,7 @@ namespace Hahn_Softwareentwicklung.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Order>().ToTable("Orders");
             modelBuilder.Entity<Order>(entity =>
             {

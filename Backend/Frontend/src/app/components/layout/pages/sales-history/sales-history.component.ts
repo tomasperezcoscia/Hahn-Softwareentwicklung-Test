@@ -11,6 +11,7 @@ import * as moment from 'moment';
 
 
 import { Order } from 'src/app/interfaces/order';
+import { OrderItem } from 'src/app/interfaces/order-item';
 import { SaleHistoryModelComponent } from '../../models/sale-history-model/sale-history-model.component';
 
 import { UtilityService } from 'src/app/Reutilizable/utility.service';
@@ -104,11 +105,15 @@ export class SalesHistoryComponent implements OnInit, AfterViewInit {
   }
 
   seeOrderDetails(order: Order) {
-    console.log(order);
-    this._dialog.open(SaleHistoryModelComponent, {
-      width: '700px',
-      data: order,
-      disableClose: true
+    this._orderService.getOrderOrderItems(order.id).subscribe({
+      next: (data) => {
+        order.orderItems = data;
+        this._dialog.open(SaleHistoryModelComponent, {
+          width: '700px',
+          data: order,
+          disableClose: true
+        });
+      }
     });
   }
 

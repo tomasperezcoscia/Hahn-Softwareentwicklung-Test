@@ -197,6 +197,7 @@ export class SalesComponent implements OnInit {
     const orderItem: OrderItem = {
       id: uuidv4(),
       carId: this.selectedCar.id,
+      orderId: '',
       carDescription: this.selectedCar.brand + ' ' + this.selectedCar.model + ' ' + this.selectedCar.year,
       quantity: carQuantity,
       priceText: String(carPrice),
@@ -233,15 +234,23 @@ export class SalesComponent implements OnInit {
       status: this.selectedOrderStatus
     }
 
-    console.log(order.orderItems + "Oorder pushed on AddOrder")
+    console.log(JSON.stringify(order.orderItems) + "Oorder pushed on AddOrder")
 
     this._orderService.addOrder(order).subscribe({
       next: (data) => {
         console.log(data);
         order.id = data.id;
+        this.orderItems.forEach(item => {
+          item.orderId = order.id;
+          this._orderService.addOrderItem(item).subscribe({
+            next: (data) => {
+              console.log(data);
+            }
+          })
+        });
         this._orderService.updateOrder(data.id,order).subscribe({
           next: (data) => {
-            console.log(data);
+            console.log(JSON.stringify(data));
           },
           error: (error) => {
             console.log(error);
